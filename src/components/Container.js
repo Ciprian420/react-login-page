@@ -33,5 +33,3 @@ const Container = () => {
         </ContMain>
     )
 }
-
-export default Container
