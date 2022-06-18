@@ -1,4 +1,4 @@
-import { ContMain, Header, SideBar, Details, H4, Count, Input, Label, H5, Para, Detailssecond, InputContainer, Slider, InputSlider, AccreditContainer, AccreditContainer2, Accredit, AccreditInput } from "./Container2.style"
+import { ContMain, Header, SideBar, Details, H4, Count, Input, Label, H5, Para, Detailssecond, InputContainer, Slider, InputSlider, AccreditContainer, AccreditContainer2, Accredit, AccreditInput } from "../Container2.style"
 
 const Container2 = () => {
     return (
