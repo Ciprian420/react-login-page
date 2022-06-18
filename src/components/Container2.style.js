@@ -101,4 +101,5 @@ font-size: medium;
 `
 export const AccreditInput = styled.input`
 margin-right: 30px;
+
 `
