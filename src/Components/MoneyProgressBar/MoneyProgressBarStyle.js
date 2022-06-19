@@ -17,7 +17,7 @@ export const OrizontalLine = styled.div`
 display: flex;
 align-items: center;
 flex-direction: row-reverse;
-width: 160px;
+width: 87px;
 height: 5px;
 background-color: #35a1ee
 `

@@ -1,4 +1,7 @@
-import { ContMain, Header, SideBar, Details, H4, Count, Input, Label, H5, Para, Detailssecond, InputContainer, Slider, InputSlider, AccreditContainer, AccreditContainer2, Accredit, AccreditInput } from "../Container2.style"
+import { ContMain, Header, SideBar, Details, H4, Count, Input,
+    Label, H5, Para, Detailssecond, InputContainer, Slider, InputSlider,
+    AccreditContainer, AccreditContainer2, Accredit, AccreditInput } from "./Investment.style"
+import MoneyProgressBar from "../MoneyProgressBar/MoneyProgressBar";
 
 const Container2 = () => {
     return (
@@ -17,7 +20,7 @@ const Container2 = () => {
                     <Input placeholder="To"/>
                     </InputContainer>
                     <Slider>
-                        <InputSlider type="range"/>
+                        <MoneyProgressBar></MoneyProgressBar>
                     </Slider>
                     <Accredit>Are u an accredited investor?</Accredit>
                     <AccreditContainer>
