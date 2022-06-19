@@ -1,13 +1,15 @@
-import { ContMain, Header, SideBar, Details, H4, Count, Input, Label, H5, Para, Detailssecond, InputContainer, Slider, InputSlider, AccreditContainer, AccreditContainer2, Accredit, AccreditInput } from "../Container2.style"
+import { ContMain, Header, Footer, Button, Simplediv, SideBarContainer, Details, H4, Count, Input, Label, H5, Para, Link, Detailssecond, InputContainer, Slider, InputSlider, AccreditContainer, AccreditContainer2, Accredit, AccreditInput } from "../Investment/Investment.style"
+import SideBar from "../SideBar/SideBar"
 
 const Container2 = () => {
     return (
         <ContMain>
-            <SideBar></SideBar>
+            <SideBarContainer><SideBar/></SideBarContainer>
             <Details>
                 <Detailssecond>
                     <Header>
                     <H5>STEP 2 OF 3</H5>
+                    <Para>Lost or Have Troubles?<Link> Get Help  → </Link></Para>
                     </Header>
                     <H4>Investment Plans</H4>
                     <Para>Let us know about your investment plans. This will help us get you to the right expert who will help u further</Para>
@@ -30,6 +32,13 @@ const Container2 = () => {
                     <Label for="choice2">No</Label>
                     </AccreditContainer2>
                     </AccreditContainer>
+                    <Footer>
+                    <Para color="#3988dd">← Back to the previous</Para> 
+                        <Simplediv>
+                            <Button color="#3988dd" backgroundColor="#edf7fd">Skip for now</Button> 
+                            <Button color="white" backgroundColor="#35a1ee">Next stop→</Button>
+                        </Simplediv>
+                    </Footer>
                 </Detailssecond>
             </Details>
         </ContMain>
