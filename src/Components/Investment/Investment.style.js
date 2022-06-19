@@ -79,7 +79,7 @@ padding-bottom: 5px;
 `
 export const Slider = styled.div`
 width: 100%;
-height: 50px;
+height: 100px;
 `
 export const InputSlider = styled.input`
 width: 100%;
