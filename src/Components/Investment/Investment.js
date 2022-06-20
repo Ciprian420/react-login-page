@@ -2,12 +2,12 @@ import { ContMain, Header, SideBarContainer, Details, H4, Count, Input, Footer, 
     Label, H5, Para, Detailssecond, InputContainer, Slider, Link,
     AccreditContainer, AccreditContainer2, Accredit, AccreditInput } from "./Investment.style"
 import MoneyProgressBar from "../MoneyProgressBar/MoneyProgressBar";
-import SideBar from "../SideBar/SideBar";
+import InvSideBar from "../Investment/InvSideBar";
 
 const Container2 = () => {
     return (
         <ContMain>
-            <SideBarContainer><SideBar/></SideBarContainer>
+            <SideBarContainer><InvSideBar/></SideBarContainer>
             <Details>
                 <Detailssecond>
                 <Header>

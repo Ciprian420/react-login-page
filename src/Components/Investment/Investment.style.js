@@ -124,10 +124,15 @@ display: flex;
 flex-direction: row;
 `
 export const AccreditContainer2 = styled.div`
+display: flex;
+text-align: center;
+justify-content: flex-start;
 border: 2px solid black;
 border-radius: 5px;
 margin-right: 10px;
 height: 30px;
+margin-top: 10px;
+padding-right: 20px;
 `
 export const Accredit = styled(H4)`
 margin-top: 0;
