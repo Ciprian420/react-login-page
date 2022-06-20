@@ -6,7 +6,7 @@ import Preferences from './Components/Preferences/Preferences';
 function App() {
   return (
    <div className="App">
-    <Preferences></Preferences>
+    <Container2></Container2>
    </div>
   )
 }
