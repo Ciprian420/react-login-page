@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export const Square = styled.div`
 display: flex;
-width: 23px;
-height: 23px;
+width: 25px;
+height: 27px;
 background-color: #35a1ee;
 border-radius: 2px;
 flex-direction: column;
@@ -35,6 +35,7 @@ align-items: baseline;
 `
 
 export const Price = styled.span`
+font-size: 12px;
 position: relative;
 top: 50px;
 left: -28px;

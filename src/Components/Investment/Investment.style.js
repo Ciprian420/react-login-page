@@ -7,11 +7,6 @@ width: 950px;
 height: 600px;
 background-color: #ffffff;
 `
-export const SideBar = styled.div`
-height: 600px;
-width: 350px;
-background-color: black;
-`
 export const Details = styled.div`
 display: flex;
 justify-content: center;
@@ -80,9 +75,6 @@ padding-bottom: 5px;
 export const Slider = styled.div`
 width: 100%;
 height: 100px;
-`
-export const InputSlider = styled.input`
-width: 100%;
 `
 export const AccreditContainer = styled.div`
 width: 100%;
