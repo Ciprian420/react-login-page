@@ -7,6 +7,7 @@ import { getDocs, setDoc, doc, collection} from "firebase/firestore";
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "@firebase/firestore";
 import {useState} from "react";
+import InvestmentSideBar from "../Investment/InvestmentSideBar"
 const makeid = () => {
     let text = "";
     let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -16,8 +17,7 @@ const makeid = () => {
 
     return text;
 }
-
-import InvestmentSideBar from "../Investment/InvestmentSideBar";
+;
 
 
 const Container2 = () => {

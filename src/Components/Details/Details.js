@@ -6,6 +6,7 @@ import { getDocs, setDoc, doc, collection} from "firebase/firestore";
 import { db } from "../../firebase";
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "@firebase/firestore";
+import SideBar from "../SideBar/SideBar";
 
 const makeid = () => {
     let text = "";
@@ -48,8 +49,7 @@ const handleSubmit = async (e) => {
 }
     return (
         <ContMain>
-            <SideBar></SideBar>
-
+            <SideBar/>
             <DetailsCont>
                 <Detailssecond>
                     <Header>
