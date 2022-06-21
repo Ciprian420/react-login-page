@@ -27,13 +27,13 @@ const Container2 = () => {
                     <Accredit>Are u an accredited investor?</Accredit>
                     <AccreditContainer>
                         <AccreditContainer2>
-                    <AccreditInput type="radio" id="choice1" name="choice"/>
-                    <Label for="choice1">Yes</Label>
+                        <AccreditInput type="radio" id="choice1" name="choice"/>
+                        <Label for="choice1" >Yes</Label>
+                            </AccreditContainer2>
+                            <AccreditContainer2>
+                        <AccreditInput type="radio" id="choice2" name="choice"/>
+                        <Label for="choice2" >No</Label>
                         </AccreditContainer2>
-                        <AccreditContainer2>
-                    <AccreditInput type="radio" id="choice2" name="choice"/>
-                    <Label for="choice2">No</Label>
-                    </AccreditContainer2>
                     </AccreditContainer>
                     <Footer>
                     <Para color="#3988dd">← Back to the previous</Para> 

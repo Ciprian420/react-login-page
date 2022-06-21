@@ -123,6 +123,12 @@ margin-bottom: 0;
 border-radius: 3px;
 border: solid 2px lightgrey;
 background-color: #fff;
+&:focus-within {
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+    border: 2px solid #a4d3f9;
+  } 
+
 `
 export const SelectInput = styled.input`
 display: flex;

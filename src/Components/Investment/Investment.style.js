@@ -109,9 +109,7 @@ border-color: #d5d9dc;
     border-bottom-color: #35a0ee;
 }
 `
-export const Label = styled.label`
-padding-bottom: 5px;
-`
+
 export const Slider = styled.div`
 width: 100%;
 height: 100px;
@@ -124,6 +122,19 @@ width: 100%;
 display: flex;
 flex-direction: row;
 `
+
+export const Accredit = styled(H4)`
+margin-top: 0;
+font-size: medium;
+`
+export const AccreditInput = styled.input`
+margin-right: 30px;
+
+
+`
+export const Label = styled.label`
+width: 25px;
+`
 export const AccreditContainer2 = styled.div`
 display: flex;
 text-align: center;
@@ -134,11 +145,18 @@ margin-right: 10px;
 height: 30px;
 margin-top: 10px;
 padding-right: 20px;
-`
-export const Accredit = styled(H4)`
-margin-top: 0;
-font-size: medium;
-`
-export const AccreditInput = styled.input`
-margin-right: 30px;
+box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+&:focus-within {
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+    border: 2px solid #a4d3f9;
+  }
+&:active{
+    > label {
+        transition: color 0.2s ease-in-out;
+        color: #a4d3f9
+    }
+} 
 `
