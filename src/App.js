@@ -7,7 +7,6 @@ import Investment from "./Components/Investment/Investment";
 function App() {
   return (
    <div className="App">
-    <Investment/>
    </div>
   )
 }
