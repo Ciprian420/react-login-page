@@ -1,14 +1,14 @@
-import {   SelectPara, SelectInput, RealEstate, Select , H3font, Header, ContMain, DetailsCont , H3, H5, Para, Detailssecond, Link, Footer, Button, Simplediv } from "./Preferences.style"
-import SideBar from "../SideBar/SideBar"
+import {   SelectPara, SelectInput, RealEstate, Select , H3font, Header, SideBarContainer, ContMain, DetailsCont , H3, H5, Para, Detailssecond, Link, Footer, Button, Simplediv } from "./Preferences.style"
+import PreferencesSideBar from "../Preferences/PreferencesSideBar"
 
 const Preferences = () => {
     return (
         <ContMain>
-                <SideBar></SideBar>
+                <SideBarContainer><PreferencesSideBar/></SideBarContainer>
             <DetailsCont>
                 <Detailssecond>
                     <Header>
-                        <H5>STEP 1 OF 3</H5>
+                        <H5>STEP 3 OF 3</H5>
                         <Para>Lost or Have Troubles?<Link> Get Help  → </Link></Para>
                     </Header>
                         <H3>Investment Preferences</H3>

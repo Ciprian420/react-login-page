@@ -16,7 +16,7 @@ import {
   ProgressTextContainer,
 } from "./SideBarStyle";
 
-const SideBar = () => {
+const SideBar = (props) => {
   return (
     <Container>
       <SloganContainer>

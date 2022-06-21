@@ -1,5 +1,6 @@
 import {
     Lines,
+    InvestmentLines,
     Container,
     Slogan,
     Properties,
@@ -8,17 +9,19 @@ import {
     ImageContainer,
     QuoteContainer,
     TextContainer,
+    InvestmentPlansProgressBar,
+    InvestmentPreferencesProgressBar,
     ProgressBar,
     CheckedPage,
+    InvestmentPlansProgressText,
+    InvestmentPreferencesProgressText,
     ProgressText,
     SloganContainer,
     ProgressBarContainer,
-    ProgressBarIP,
     ProgressTextContainer,
-    ProgressTextIP
-  } from "./InvSideBar.style";
+  } from "./PreferencesSideBarStyle";
   
-  const InvSideBar = () => {
+  const DetailsSideBar = (props) => {
     return (
       <Container>
         <SloganContainer>
@@ -40,18 +43,20 @@ import {
           <Lines />
           <div>
             <ProgressTextContainer>
-              <ProgressBar>
-                <CheckedPage></CheckedPage>
-              </ProgressBar>
-              <ProgressText>Investment Plans</ProgressText>
+              <InvestmentPlansProgressBar>
+              <CheckedPage></CheckedPage>
+              </InvestmentPlansProgressBar>
+              <InvestmentPlansProgressText>Investment Plans</InvestmentPlansProgressText>
             </ProgressTextContainer>
           </div>
-          <Lines />
-          <Lines />
+          <InvestmentLines />
+          <InvestmentLines />
           <div>
             <ProgressTextContainer>
-              <ProgressBarIP/>
-              <ProgressTextIP>Investment Preferences</ProgressTextIP>
+              <InvestmentPreferencesProgressBar>
+              <CheckedPage></CheckedPage>
+              </InvestmentPreferencesProgressBar>
+              <InvestmentPreferencesProgressText>Investment Preferences</InvestmentPreferencesProgressText>
             </ProgressTextContainer>
           </div>
         </ProgressBarContainer>
@@ -72,5 +77,5 @@ import {
     );
   };
   
-  export default InvSideBar;
+  export default DetailsSideBar;
   

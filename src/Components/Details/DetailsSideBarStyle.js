@@ -113,7 +113,16 @@ export const ProgressBar = styled.div`
   border-radius: 3px;
   border: 3px solid white;
 `
-export const ProgressBarIP = styled.div`
+export const InvestmentPreferencesProgressBar = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  border: 3px solid #9acff7;
+`
+export const InvestmentPlansProgressBar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,8 +152,16 @@ export const ProgressText = styled.span`
   height: 25px;
   text-align: left;
 `
-export const ProgressTextIP = styled.span`
-color: #9acff7;
+export const InvestmentPreferencesProgressText = styled.span`
+  color: #9acff7;
+  margin-left: 17px;
+  width: 180px;
+  font-weight: bolder;
+  height: 25px;
+  text-align: left;
+`
+export const InvestmentPlansProgressText = styled.span`
+  color: #9acff7;
   margin-left: 17px;
   width: 180px;
   font-weight: bolder;
@@ -154,6 +171,13 @@ color: #9acff7;
 
 export const Lines = styled.line`
 background-color: #fff;
+  width: 3px;
+  height: 13px;
+  border-radius: 7px;
+  margin-left: 8px;
+`
+export const InvestmentLines = styled.line`
+background-color: #9acff7;
   width: 3px;
   height: 13px;
   border-radius: 7px;

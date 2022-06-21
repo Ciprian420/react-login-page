@@ -76,7 +76,8 @@ export const H5 = styled.h5`
 margin-top: 15px;
 display: flex;
 left: 10px;
-color: gray;`
+color: gray;
+`
 export const Para = styled.p`
 display: flex;
 justify-content: flex-start;
