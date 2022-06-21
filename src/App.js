@@ -11,9 +11,9 @@ function App() {
    <div className="App">
 
     {/* <Container2/> */}
-     <Details/>
-    {/* <Preferences/> */}
-     {/*<Confirmation/>*/}
+     {/* <Details/> */}
+    <Preferences/>
+     {/* <Confirmation/> */}
 
 
    </div>

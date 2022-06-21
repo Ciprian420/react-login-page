@@ -123,11 +123,18 @@ margin-bottom: 0;
 border-radius: 3px;
 border: solid 2px lightgrey;
 background-color: #fff;
+&:active {
+    outline: none;
+    border: 2px solid aquamarine;
+    border-radius: 3px;
+}
 `
 export const SelectInput = styled.input`
+border: solid 2px ;
 display: flex;
 `
 export const SelectPara = styled.p`
+width: 10px;
 font-size: 12px;
 display: flex;
 text-align: left;

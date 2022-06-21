@@ -9,6 +9,7 @@ import {getFirestore} from "@firebase/firestore";
 import {useState} from "react";
 import InvestmentSideBar from "../Investment/InvestmentSideBar"
 const makeid = () => {
+    
     let text = "";
     let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
