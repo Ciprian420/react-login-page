@@ -1,10 +1,17 @@
 import styled from "styled-components"
 
 export const Simplediv = styled.div`
+margin-top: 5px;
 `
 export const InputCont = styled.div`
 width: 100%;
 height: 150px;
+`
+export const SideBarContainer = styled.div`
+border-radius: 5px 0px 0px 5px;
+height: 600px;
+width: 350px;
+background-color: black;
 `
 export const ContMain = styled.div`
 display: flex;
@@ -28,17 +35,14 @@ border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
 `
 export const Detailssecond = styled.div`
-display: flex;
-flex-direction: column;
 width: 450px;
 height: 600px;
 background-color: #ffffff;
 border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
-position: relative;
-left: -20px;
 `
 export const Header = styled.div`
+margin-top: 10px;
 display: flex;
 justify-content: space-between;
 width: 100%;
@@ -52,6 +56,7 @@ align-self: flex-end;
 display: flex;
 width: 100%;
 height: 50px;
+margin-bottom: 10px;
 `
 export const H3 = styled.h3`
 display: flex;
@@ -59,24 +64,24 @@ margin-bottom: 0;
 font-family: 'Roboto', sans-serif;
 `
 export const H5 = styled.h5`
-font-family: 'Roboto', sans-serif;
+margin-top: 15px;
 display: flex;
 left: 10px;
-color: gray;`
+color: gray;
+`
 export const H4 = styled.h4`
 font-family: 'Roboto', sans-serif;
 display: flex;
 `
 export const Para = styled.p`
-font-family: 'Roboto', sans-serif;
 display: flex;
+justify-content: flex-start;
 color: gray;
 font-size: small;
 text-align: left;
-margin-top: 10px;
-color: ${(props) => props.color};
 `
 export const Link = styled.a`
+margin-top: 3px;
 font-family: 'Roboto', sans-serif;
 color: #3988dd;
 `
