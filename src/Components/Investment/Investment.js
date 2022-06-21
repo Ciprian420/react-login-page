@@ -2,9 +2,46 @@ import { ContMain, Header, SideBarContainer, Details, H4, Count, Input, Footer, 
     Label, H5, Para, Detailssecond, InputContainer, Slider, Link,
     AccreditContainer, AccreditContainer2, Accredit, AccreditInput } from "./Investment.style"
 import MoneyProgressBar from "../MoneyProgressBar/MoneyProgressBar";
+import SideBar from "../SideBar/SideBar";
+import { getDocs, setDoc, doc, collection} from "firebase/firestore";
+import {initializeApp} from "firebase/app";
+import {getFirestore} from "@firebase/firestore";
+import {useState} from "react";
+const makeid = () => {
+    let text = "";
+    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (let i = 0; i < 21; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+
 import InvestmentSideBar from "../Investment/InvestmentSideBar";
 
+
 const Container2 = () => {
+    const [Min, SetMin] = useState("")
+    const [Max, SetMax] = useState("")
+    const firebaseConfig = {
+        apiKey: "AIzaSyDFCyVx0svRELkympaEGa0IXW5r0PnCRTE",
+        authDomain: "login-ad768.firebaseapp.com",
+        projectId: "login-ad768",
+        storageBucket: "login-ad768.appspot.com",
+        messagingSenderId: "130602005190",
+        appId: "1:130602005190:web:e142f77ea3cd7c4bca9dc7",
+        measurementId: "G-1365Q36W6L"
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app)
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await setDoc(doc(db, "users", makeid()), {
+            min: Min,
+            max: Max,
+        });
+    }
     return (
         <ContMain>
             <SideBarContainer><InvestmentSideBar/></SideBarContainer>
@@ -17,11 +54,14 @@ const Container2 = () => {
                     <H4>Investment Plans</H4>
                     <Para>Let us know about your investment plans. This will help us get you to the right expert who will help u further</Para>
                     <Count>How much are you planning to invest in this year?</Count>
-                    <InputContainer>
-                    <Input placeholder="From"/>
-                    <Input placeholder="To"/>
-                    </InputContainer>
-                    <Slider>
+                    <form onSubmit={handleSubmit}>
+                        <Input placeholder="From"
+                               value={Min}
+                               onChange={(e) => SetMin(e.target.value)}/>
+                        <Input placeholder="To"
+                               value={Max}
+                               onChange={(e) => SetMax(e.target.value)}/>
+                        <Slider>
                         <MoneyProgressBar></MoneyProgressBar>
                     </Slider>
                     <Accredit>Are u an accredited investor?</Accredit>
@@ -39,13 +79,13 @@ const Container2 = () => {
                     <Para color="#3988dd">← Back to the previous</Para> 
                         <Simplediv>
                             <Button color="#3988dd" backgroundColor="#edf7fd">Skip for now</Button> 
-                            <Button color="white" backgroundColor="#35a1ee">Next stop→</Button>
+                            <Button type="submit" color="white" backgroundColor="#35a1ee">Next stop→</Button>
                         </Simplediv>
                     </Footer>
+                </form>
                 </Detailssecond>
             </Details>
         </ContMain>
     )
 }
-
 export default Container2
