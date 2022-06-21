@@ -1,5 +1,5 @@
-import { InputLonger, InputCont, Header, ContMain, DetailsCont ,H4, H3, H5, Para, Detailssecond, Link, Footer, Button, Simplediv, Input } from "./Details.style"
-import SideBar from "../SideBar/SideBar"
+import { InputLonger, InputCont, SideBarContainer, Header, ContMain, DetailsCont ,H4, H3, H5, Para, Detailssecond, Link, Footer, Button, Simplediv, Input } from "./Details.style"
+import DetailSideBar from "../Details/DetailsSideBar"
 import { useForm } from "react-hook-form"
 import { useState, useEffect} from "react";
 import { getDocs, setDoc, doc, collection} from "firebase/firestore";
@@ -49,6 +49,7 @@ const handleSubmit = async (e) => {
     return (
         <ContMain>
             <SideBar></SideBar>
+
             <DetailsCont>
                 <Detailssecond>
                     <Header>

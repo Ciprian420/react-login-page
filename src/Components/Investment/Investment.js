@@ -17,6 +17,9 @@ const makeid = () => {
     return text;
 }
 
+import InvestmentSideBar from "../Investment/InvestmentSideBar";
+
+
 const Container2 = () => {
     const [Min, SetMin] = useState("")
     const [Max, SetMax] = useState("")
@@ -41,7 +44,7 @@ const Container2 = () => {
     }
     return (
         <ContMain>
-            <SideBarContainer><SideBar/></SideBarContainer>
+            <SideBarContainer><InvestmentSideBar/></SideBarContainer>
             <Details>
                 <Detailssecond>
                 <Header>
