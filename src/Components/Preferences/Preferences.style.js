@@ -123,6 +123,7 @@ margin-bottom: 0;
 border-radius: 3px;
 border: solid 2px lightgrey;
 background-color: #fff;
+
 `
 export const SelectInput = styled.input`
 display: flex;

@@ -18,8 +18,6 @@ const makeid = () => {
     return text;
 }
 ;
-
-
 const Container2 = () => {
     const [Min, SetMin] = useState("")
     const [Max, SetMax] = useState("")
@@ -52,7 +50,7 @@ const Container2 = () => {
                         <Para>Lost or Have Troubles?<Link> Get Help  → </Link></Para>
                     </Header>
                     <H4>Investment Plans</H4>
-                    <Para>Let us know about your investment plans. This will help us get you to the right expert who will help u further</Para>
+                    <Para style={{}} >Let us know about your investment plans. This will help us get you to the right expert who will help u further</Para>
                     <Count>How much are you planning to invest in this year?</Count>
                     <form onSubmit={handleSubmit}>
                         <Input placeholder="From"
@@ -64,7 +62,7 @@ const Container2 = () => {
                         <Slider>
                         <MoneyProgressBar></MoneyProgressBar>
                     </Slider>
-                    <Accredit>Are u an accredited investor?</Accredit>
+                    <Accredit style={{marginTop: 10,fontSize: 'medium'}}>Are u an accredited investor?</Accredit>
                     <AccreditContainer>
                         <AccreditContainer2>
                     <AccreditInput type="radio" id="choice1" name="choice"/>
@@ -79,6 +77,7 @@ const Container2 = () => {
                     <Para color="#3988dd">← Back to the previous</Para> 
                         <Simplediv>
                             <Button color="#3988dd" backgroundColor="#edf7fd">Skip for now</Button> 
+
                             <Button type="submit" color="white" backgroundColor="#35a1ee">Next stop→</Button>
                         </Simplediv>
                     </Footer>

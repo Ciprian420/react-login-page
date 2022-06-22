@@ -116,9 +116,6 @@ export const Slider = styled.div`
 width: 100%;
 height: 100px;
 `
-export const InputSlider = styled.input`
-width: 100%;
-`
 export const AccreditContainer = styled.div`
 width: 100%;
 display: flex;

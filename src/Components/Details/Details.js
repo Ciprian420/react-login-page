@@ -52,6 +52,12 @@ const handleSubmit = async (e) => {
             <SideBar/>
             <DetailsCont>
                 <Detailssecond>
+                    {
+                        step === 0 && <div>Step1</div>
+                    }
+                    {
+                        step === 1 && <div>Step2</div>
+                    }
                     <Header>
                         <H5>STEP 1 OF 3</H5>
                         <Para>Lost or Have Troubles?<Link> Get Help  → </Link></Para>
