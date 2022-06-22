@@ -11,9 +11,9 @@ function App() {
   return (
       <Router>
         <Routes>
-          <Route path="/" element={<Details />} />
-          <Route path="/page2" element={<Container2 />} />
-          <Route path="/page3" element={<Preferences />} />
+          <Route path="/" element={<Details/>} />
+          <Route path="/page2" element={<Container2/>} />
+          <Route path="/page3" element={<Preferences/>} />
         </Routes>
       </Router>
   );

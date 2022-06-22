@@ -13,7 +13,7 @@ border-radius: 5px;
 width: 950px;
 height: 600px;
 background-color: #ffffff;
-z-index: 3
+z-index: 3;
 `
 
 export const SideBarContainer = styled.div`
@@ -118,7 +118,7 @@ height: 20px;
   border-left: hidden;
   border-bottom: lightgrey solid 2px;
 &:focus{
-    outline: none;
+    outline: none2;
     border-bottom: #3988dd solid 2px;
 }
 `
