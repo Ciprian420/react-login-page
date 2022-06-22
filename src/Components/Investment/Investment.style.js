@@ -7,6 +7,43 @@ width: 950px;
 height: 600px;
 background-color: #ffffff;
 `
+export const SideBarContainer = styled.div`
+border-radius: 5px 0px 0px 5px;
+height: 600px;
+width: 350px;
+background-color: black;
+`
+export const Link = styled.a`
+margin-top: 3px;
+font-family: 'Roboto', sans-serif;
+color: #3988dd;
+`
+export const Simplediv = styled.div`
+margin-top: 5px;
+`
+export const Footer = styled.div`
+justify-content: space-between;
+position: relative;
+bottom: -50px;
+align-self: flex-end;
+display: flex;
+width: 100%;
+height: 50px;
+`
+export const Button = styled.button`
+font-family: 'Roboto', sans-serif;
+color: ${(props) => props.color};
+text-align: center;
+border: none;
+width: 110px;
+height: 35px;
+border-radius: 3px;
+background-color: ${(props) => props.backgroundColor};
+margin-right: 10px;
+&:active{
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+`
 export const Details = styled.div`
 display: flex;
 justify-content: center;
@@ -24,6 +61,7 @@ border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
 `
 export const Header = styled.div`
+margin-top: 10px;
 display: flex;
 justify-content: space-between;
 width: 100%;
@@ -35,9 +73,11 @@ font-size: x-large;
 margin-bottom: 0;
 `
 export const H5 = styled.h5`
+margin-top: 15px;
 display: flex;
 left: 10px;
-color: gray;`
+color: gray;
+`
 export const Para = styled.p`
 display: flex;
 justify-content: flex-start;
@@ -82,10 +122,15 @@ display: flex;
 flex-direction: row;
 `
 export const AccreditContainer2 = styled.div`
+display: flex;
+text-align: center;
+justify-content: flex-start;
 border: 2px solid black;
 border-radius: 5px;
 margin-right: 10px;
 height: 30px;
+margin-top: 10px;
+padding-right: 20px;
 `
 export const Accredit = styled(H4)`
 margin-top: 0;

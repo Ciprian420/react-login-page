@@ -2,31 +2,51 @@ import styled from "styled-components";
 
 
 export const Square = styled.div`
+<<<<<<< HEAD
 display: flex;
 width: 25px;
 height: 27px;
+=======
+margin-top: 10px;
+width: 20px;
+height: 20px;
+>>>>>>> main
 background-color: #35a1ee;
 border-radius: 2px;
-flex-direction: column;
-justify-content: center;
 margin-left: -8px;
 `
 
 
 export const OrizontalLine = styled.div`
+margin-top: 10px;
 display: flex;
 align-items: center;
 flex-direction: row-reverse;
 width: 87px;
-height: 5px;
-background-color: #35a1ee
+height: 4px;
+background-color: #35a1ee;
+`
+export const OrizontalLineIC = styled.div`
+margin-top: 10px;
+display: flex;
+align-items: center;
+flex-direction: row-reverse;
+width: 87px;
+height: 4px;
+background-color: #e9f0f6;
 `
 
 export const VerticalLine = styled.div`
 border-radius: 1px;
-width: 5px;
-height: 22px;
-background-color: #35a1ee
+width: 4px;
+height: 15px;
+background-color: #35a1ee;
+`
+export const VerticalLineIC = styled.div`
+border-radius: 1px;
+width: 4px;
+height: 15px;
+background-color: #e9f0f6;
 `
 
 export const Container = styled.div`

@@ -1,17 +1,18 @@
-import { ContMain, Header, Details, H4, Count, Input,
-    Label, H5, Para, Detailssecond, InputContainer, Slider,
+import { ContMain, Header, SideBarContainer, Details, H4, Count, Input, Footer, Simplediv, Button,
+    Label, H5, Para, Detailssecond, InputContainer, Slider, Link,
     AccreditContainer, AccreditContainer2, Accredit, AccreditInput } from "./Investment.style"
 import MoneyProgressBar from "../MoneyProgressBar/MoneyProgressBar";
-import SideBar from "../SideBar/SideBar"
+import InvestmentSideBar from "../Investment/InvestmentSideBar";
 
 const Container2 = () => {
     return (
         <ContMain>
-            <SideBar></SideBar>
+            <SideBarContainer><InvestmentSideBar/></SideBarContainer>
             <Details>
                 <Detailssecond>
-                    <Header>
-                    <H5>STEP 2 OF 3</H5>
+                <Header>
+                        <H5>STEP 2 OF 3</H5>
+                        <Para>Lost or Have Troubles?<Link> Get Help  → </Link></Para>
                     </Header>
                     <H4>Investment Plans</H4>
                     <Para style={{}} >Let us know about your investment plans. This will help us get you to the right expert who will help u further</Para>
@@ -34,6 +35,13 @@ const Container2 = () => {
                     <Label for="choice2">No</Label>
                     </AccreditContainer2>
                     </AccreditContainer>
+                    <Footer>
+                    <Para color="#3988dd">← Back to the previous</Para> 
+                        <Simplediv>
+                            <Button color="#3988dd" backgroundColor="#edf7fd">Skip for now</Button> 
+                            <Button color="white" backgroundColor="#35a1ee">Next stop→</Button>
+                        </Simplediv>
+                    </Footer>
                 </Detailssecond>
             </Details>
         </ContMain>

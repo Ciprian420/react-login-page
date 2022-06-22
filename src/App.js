@@ -3,6 +3,7 @@ import './App.css';
 import Details from './Components/Details/Details';
 import Container2 from "./Components/Investment/Investment";
 import Preferences from './Components/Preferences/Preferences';
+import Confirmation from './Components/Confirmation/Confirmation';
 
 function App() {
   useEffect(()=>{
@@ -11,9 +12,10 @@ function App() {
 
   return (
    <div className="App">
-    <Details></Details>
-    {/* <Container2></Container2> */}
-    {/* <Preferences></Preferences> */}
+    {/* <Container2/> */}
+    {/* <Details/> */}
+    <Preferences/>
+    {/* <Confirmation/> */}
    </div>
   )
 }
