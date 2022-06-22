@@ -1,98 +1,95 @@
-import {
-  InputLonger,
-  InputCont,
-  Header,
-  DetailsCont,
-  H4,
-  H3,
-  H5,
-  Para,
-  Detailssecond,
-  Link,
-  Footer,
-  Button,
-  Simplediv,
-  Input,
-  Container,
-} from "./Details.style";
+
+import { InputLonger, InputCont, SideBarContainer, Header, ContMain, DetailsCont ,H4, H3, H5, Para, Detailssecond, Link, Footer, Button, Simplediv, Input } from "./Details.style"
+import DetailSideBar from "../Details/DetailsSideBar"
+import { useForm } from "react-hook-form"
+import { useState, useEffect} from "react";
+import { getDocs, setDoc, doc, collection} from "firebase/firestore";
+import { db } from "../../firebase";
+import {initializeApp} from "firebase/app";
+import {getFirestore} from "@firebase/firestore";
 import SideBar from "../SideBar/SideBar";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
 import { useLocation } from "react-router"
 import { useNavigate } from 'react-router-dom';
-import {useEffect} from "react";
 
-const normalizeCardNumber = (value) => {
-    return (
-      value
-        .replace(/\s/g, "")
-        .match(/.{1,4}/g)
-        ?.join(" ")
-        .substr(0, 19) || ""
-    );
-  };
+const makeid = () => {
+    let text = "";
+    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+    for (let i = 0; i < 21; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
 
+    return text;
+}
 
+const Details = () => {
+    const [Name, SetName] = useState("")
+    const [Email, SetEmail] = useState("")
+    const [Number, SetNumber] = useState("")
+    const [Country, SetCountry] = useState("")
 
-export const Details = ( props ) => {
-   console.log({hist: props.history});
-
-  const navigate = useNavigate();
-
-  const changeUrl = () => {
-    navigate("/page2")
-  }
-
-  return <Container className="container" style={{}}>
-      <SideBar></SideBar>
-      <DetailsCont>
-        <Detailssecond>
-          <Header>
-            <H5>STEP 1 OF 3</H5>
-            <Para>
-              Lost or Have Troubles?<Link> Get Help → </Link>
-            </Para>
-          </Header>
-          <H3>Contact Details</H3>
-          <Para>
-            welcome to United Properties, we are glad to see you! Let's get
-            started by letting us know a little
-          </Para>
-          <InputCont>
-            {/* <InputMask classname="input" mask={'+37\\3 99 999 999'}/>; */}
-            <Input type="tel"></Input>
-            <Input
-              placeholder="0000 0000 0000 0000"
-              type="tel"
-              inputMode="numeric"
-              autoComplete="cc-number"
-              onChange={(event) => {
-                const { value } = event.target;
-                event.target.value = normalizeCardNumber(value);
-              }}
-            ></Input>
-            <InputLonger></InputLonger>
-            <InputLonger></InputLonger>
-          </InputCont>
-          <H4>Privacy Policy</H4>
-          <Para>
-            we know you care about how personal information is used and shared,
-            so we take your privacy seriously
-          </Para>
-          <Para color="#35a1ee">Expand privacy policy →</Para>
-          <Footer>
-            <Simplediv>
-              <Button
-                color="#3988dd" backgroundColor="#edf7fd" onClick={changeUrl} >
-                Skip for now
-              </Button>
-              <Button type="submit" color="white" backgroundColor="#35a1ee" onClick={changeUrl}>
-                Next stop→
-              </Button>
-            </Simplediv>
-          </Footer>
-        </Detailssecond>
-      </DetailsCont>
-    </Container>;
+const firebaseConfig = {
+    apiKey: "AIzaSyDFCyVx0svRELkympaEGa0IXW5r0PnCRTE",
+    authDomain: "login-ad768.firebaseapp.com",
+    projectId: "login-ad768",
+    storageBucket: "login-ad768.appspot.com",
+    messagingSenderId: "130602005190",
+    appId: "1:130602005190:web:e142f77ea3cd7c4bca9dc7",
+    measurementId: "G-1365Q36W6L"
 };
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app)
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    await setDoc(doc(db, "users", makeid()), {
+        name: Name,
+        email: Email,
+        phone: Number,
+        country: Country,
+    });
+
+
+}
+    return (
+        <ContMain>
+            <SideBar/>
+            <DetailsCont>
+                <Detailssecond>
+                   
+                    <Header>
+                        <H5>STEP 1 OF 3</H5>
+                        <Para>Lost or Have Troubles?<Link> Get Help  → </Link></Para>
+                    </Header>
+                    <H3>Contact Details</H3>
+                    <Para>welcome to United Properties, we are glad to see you! Let's get started by  letting us know a little</Para>
+                        <form onSubmit={handleSubmit}>
+                            <Input type="tel" placeholder="Full name"
+                                   value={Name}
+                                   onChange={(e) => SetName(e.target.value)}
+                            />
+                            <Input placeholder="tel"  inputMode="numeric" autoComplete="cc-number"
+                                   value={Number}
+                                   onChange={(e) => SetNumber(e.target.value)}/>
+                        <InputLonger placeholder="Email address"
+                                     value={Email}
+                                     onChange={(e) => SetEmail(e.target.value)}/>
+                        <InputLonger placeholder="Country"
+                                     value={Country}
+                                     onChange={(e) => SetCountry(e.target.value)}/>
+                    <H4>Privacy Policy</H4>
+                    <Para>we know you care about how personal information is used and shared, so we take your privacy seriously</Para>
+                    <Para color="#35a1ee">Expand privacy policy →</Para>
+                    <Footer>
+                        <Para color="#3988dd">← Back to the previous</Para>
+                        <Simplediv>
+                            <Button color="#3988dd" backgroundColor="#edf7fd" >Skip for now</Button>
+                            <Button type="submit" color="white" backgroundColor="#35a1ee">Next step→</Button>
+                        </Simplediv>
+                    </Footer>
+                        </form>
+                </Detailssecond>
+            </DetailsCont>
+        </ContMain>
+    )
+}
+export default Details

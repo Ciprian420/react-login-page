@@ -1,5 +1,5 @@
 import React from "react";
-import { Square, OrizontalLine, VerticalLine, Container, Price } from "./MoneyProgressBarStyle";
+import { Square, OrizontalLine, OrizontalLineIC, VerticalLine, VerticalLineIC, Container, Price } from "./MoneyProgressBarStyle";
 import {findAllByDisplayValue} from "@testing-library/react";
 
 
@@ -46,11 +46,11 @@ const MoneyProgressBar = () => {
             <Square><Price>$500,000</Price></Square>
 
             <div>
-                <OrizontalLine>
-                    <VerticalLine>
+                <OrizontalLineIC>
+                    <VerticalLineIC>
                         <Price>$1,000,000+</Price>
-                    </VerticalLine>
-                </OrizontalLine>
+                    </VerticalLineIC>
+                </OrizontalLineIC>
             </div>
         </Container>
     )

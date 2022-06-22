@@ -81,7 +81,8 @@ export const H5 = styled.h5`
 margin-top: 15px;
 display: flex;
 left: 10px;
-color: gray;`
+color: gray;
+`
 export const Para = styled.p`
 display: flex;
 justify-content: flex-start;
@@ -120,19 +121,21 @@ export const Slider = styled.div`
 width: 100%;
 height: 100px;
 `
-export const InputSlider = styled.input`
-width: 100%;
-`
 export const AccreditContainer = styled.div`
 width: 100%;
 display: flex;
 flex-direction: row;
 `
 export const AccreditContainer2 = styled.div`
+display: flex;
+text-align: center;
+justify-content: flex-start;
 border: 2px solid black;
 border-radius: 5px;
 margin-right: 10px;
 height: 30px;
+margin-top: 10px;
+padding-right: 20px;
 `
 export const Accredit = styled(H4)`
 margin-top: 0;
