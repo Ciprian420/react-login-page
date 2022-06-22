@@ -16,12 +16,6 @@ background-color: #ffffff;
 z-index: 3
 `
 
-export const Simplediv = styled.div`
-`
-export const InputCont = styled.div`
-width: 100%;
-height: 150px;
-`
 export const SideBarContainer = styled.div`
 border-radius: 5px 0px 0px 5px;
 height: 600px;

@@ -22,7 +22,38 @@ import {
     Last
 } from "./ConfirmationStyle"
 import ConfirmationSideBar from "./ConfirmationSideBar"
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { getDatabase, ref, onValue} from "firebase/database";
+import {useEffect, useState} from "react";
+import {initializeApp} from "firebase/app";
+import {getFirestore} from "@firebase/firestore";
+import { child, get } from "firebase/database";
+import {collection, getDocs} from "firebase/firestore";
+
+
 const ConfirmationContainer = () => {
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyDFCyVx0svRELkympaEGa0IXW5r0PnCRTE",
+        authDomain: "login-ad768.firebaseapp.com",
+        projectId: "login-ad768",
+        storageBucket: "login-ad768.appspot.com",
+        messagingSenderId: "130602005190",
+        appId: "1:130602005190:web:e142f77ea3cd7c4bca9dc7",
+        measurementId: "G-1365Q36W6L"
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app)
+    const colRef = collection(db, "users")
+
+    getDocs(colRef)
+        .then((snapshot) => {
+            console.log(snapshot.docs)
+        })
+
+
+
+
     return (
         <ContMain>
             <SideBarContainer><ConfirmationSideBar/></SideBarContainer>

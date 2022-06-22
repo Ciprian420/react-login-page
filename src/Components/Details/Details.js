@@ -2,7 +2,7 @@
 import { InputLonger, InputCont, SideBarContainer, Header, ContMain, DetailsCont ,H4, H3, H5, Para, Detailssecond, Link, Footer, Button, Simplediv, Input } from "./Details.style"
 import DetailSideBar from "../Details/DetailsSideBar"
 import { useForm } from "react-hook-form"
-import { useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
 import { getDocs, setDoc, doc, collection} from "firebase/firestore";
 import { db } from "../../firebase";
 import {initializeApp} from "firebase/app";
@@ -10,18 +10,23 @@ import {getFirestore} from "@firebase/firestore";
 import SideBar from "../SideBar/SideBar";
 import { useLocation } from "react-router"
 import { useNavigate } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
-const makeid = () => {
+
+
+const makeid = (length) => {
     let text = "";
-    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    for (let i = 0; i < 21; i++)
+    for (let i = 0; i < length; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
 
     return text;
 }
 
 const Details = () => {
+    let navigate = useNavigate()
     const [Name, SetName] = useState("")
     const [Email, SetEmail] = useState("")
     const [Number, SetNumber] = useState("")
@@ -38,24 +43,24 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
-
+const date = new Date().toString()
 const handleSubmit = async (e) => {
     e.preventDefault();
-    await setDoc(doc(db, "users", makeid()), {
+    await setDoc(doc(db, "users", makeid(20)), {
         name: Name,
         email: Email,
         phone: Number,
         country: Country,
+        date: date,
     });
-
-
 }
+
+
     return (
         <ContMain>
             <SideBar/>
             <DetailsCont>
                 <Detailssecond>
-                   
                     <Header>
                         <H5>STEP 1 OF 3</H5>
                         <Para>Lost or Have Troubles?<Link> Get Help  → </Link></Para>
@@ -80,10 +85,9 @@ const handleSubmit = async (e) => {
                     <Para>we know you care about how personal information is used and shared, so we take your privacy seriously</Para>
                     <Para color="#35a1ee">Expand privacy policy →</Para>
                     <Footer>
-                        <Para color="#3988dd">← Back to the previous</Para>
                         <Simplediv>
-                            <Button color="#3988dd" backgroundColor="#edf7fd" >Skip for now</Button>
-                            <Button type="submit" color="white" backgroundColor="#35a1ee">Next step→</Button>
+                            <Button onClick={() => {navigate("/page2")}} color="#3988dd" backgroundColor="#edf7fd" >Skip for now</Button>
+                            <Button onClick={() => {navigate("/page2")}} type="submit" color="white" backgroundColor="#35a1ee">Next step→</Button>
                         </Simplediv>
                     </Footer>
                         </form>

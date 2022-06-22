@@ -24,12 +24,17 @@ import {
 import MoneyProgressBar from "../MoneyProgressBar/MoneyProgressBar";
 import SideBar from "../SideBar/SideBar";
 import styled from "styled-components";
-import { useState } from "react";
+import {createContext, useState} from "react";
 import { getDocs, setDoc, doc, collection} from "firebase/firestore";
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "@firebase/firestore";
-import {useState} from "react";
 import InvestmentSideBar from "../Investment/InvestmentSideBar"
+import {ContMain} from "../Details/Details.style";
+import {BrowserRouter as Router, Route, Routes, useNavigate} from "react-router-dom";
+import React from "react";
+
+
+
 const makeid = () => {
     let text = "";
     let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -39,10 +44,13 @@ const makeid = () => {
 
     return text;
 }
-;
+
+
 const Container2 = () => {
+    let navigate = useNavigate()
     const [Min, SetMin] = useState("")
     const [Max, SetMax] = useState("")
+    const date = new Date().toString()
     const firebaseConfig = {
         apiKey: "AIzaSyDFCyVx0svRELkympaEGa0IXW5r0PnCRTE",
         authDomain: "login-ad768.firebaseapp.com",
@@ -60,6 +68,7 @@ const Container2 = () => {
         await setDoc(doc(db, "users", makeid()), {
             min: Min,
             max: Max,
+            date: date,
         });
     }
     return (
@@ -96,11 +105,12 @@ const Container2 = () => {
                     </AccreditContainer2>
                     </AccreditContainer>
                     <Footer>
-                    <Para color="#3988dd">← Back to the previous</Para> 
+                        <Button onClick={() => {navigate("/")}}>
+                            <Para color="#3988dd">← Back to the previous</Para>
+                        </Button>
                         <Simplediv>
-                            <Button color="#3988dd" backgroundColor="#edf7fd">Skip for now</Button> 
-
-                            <Button type="submit" color="white" backgroundColor="#35a1ee">Next stop→</Button>
+                            <Button onClick={() => {navigate("/page3")}} color="#3988dd" backgroundColor="#edf7fd">Skip for now</Button>
+                            <Button onClick={() => {navigate("/page3")}} type="submit" color="white" backgroundColor="#35a1ee">Next stop→</Button>
                         </Simplediv>
                     </Footer>
                 </form>
