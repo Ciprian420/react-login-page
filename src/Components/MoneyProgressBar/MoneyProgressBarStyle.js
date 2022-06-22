@@ -2,15 +2,12 @@ import styled from "styled-components";
 
 
 export const Square = styled.div`
-<<<<<<< HEAD
-display: flex;
-width: 25px;
-height: 27px;
-=======
 margin-top: 10px;
 width: 20px;
 height: 20px;
->>>>>>> main
+margin-top: 10px;
+width: 20px;
+height: 20px;
 background-color: #35a1ee;
 border-radius: 2px;
 margin-left: -8px;
@@ -26,6 +23,7 @@ width: 87px;
 height: 4px;
 background-color: #35a1ee;
 `
+
 export const OrizontalLineIC = styled.div`
 margin-top: 10px;
 display: flex;
