@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Simplediv = styled.div`
+export const CustomDiv = styled.div`
 margin-top: 5px;
 `
 export const InputCont = styled.div`
