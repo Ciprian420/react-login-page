@@ -1,12 +1,17 @@
 import styled from "styled-components"
 
-export const ContMain = styled.div`
+
+export const Container = styled.div`
 display: flex;
 border-radius: 5px;
 width: 950px;
 height: 600px;
 background-color: #ffffff;
+position: absolute;
+z-index: 2
 `
+
+
 export const SideBarContainer = styled.div`
 border-radius: 5px 0px 0px 5px;
 height: 600px;

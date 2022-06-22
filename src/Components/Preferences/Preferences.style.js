@@ -12,6 +12,8 @@ border-radius: 5px;
 width: 950px;
 height: 600px;
 background-color: #ffffff;
+position: absolute;
+z-index: 1
 `
 // export const SideBar = styled.div`
 // height: 600px;

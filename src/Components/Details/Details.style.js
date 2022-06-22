@@ -1,17 +1,19 @@
 import styled from "styled-components"
 
-export const Simplediv = styled.div`
-`
-export const InputCont = styled.div`
-width: 100%;
-height: 150px;
-`
-export const ContMain = styled.div`
+export const Container = styled.div`
 display: flex;
 border-radius: 5px;
 width: 950px;
 height: 600px;
 background-color: #ffffff;
+z-index: 3
+`
+
+export const Simplediv = styled.div`
+`
+export const InputCont = styled.div`
+width: 100%;
+height: 150px;
 `
 // export const SideBar = styled.div`
 // height: 600px;
