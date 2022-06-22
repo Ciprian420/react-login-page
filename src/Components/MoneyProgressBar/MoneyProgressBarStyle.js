@@ -57,5 +57,5 @@ font-size: 12px;
 position: relative;
 top: 50px;
 left: -28px;
-color: #35A1EEFF;
+color: #898080;
 font-weight: bolder;`

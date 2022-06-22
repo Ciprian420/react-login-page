@@ -20,7 +20,7 @@ const MoneyProgressBar = () => {
             </div>
 
             <div>
-                <OrizontalLine>
+                <OrizontalLine >
                     <VerticalLine>
                         <Price>$100,000</Price>
                     </VerticalLine>

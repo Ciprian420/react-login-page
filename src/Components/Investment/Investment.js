@@ -1,8 +1,30 @@
-import { ContMain, Header, SideBarContainer, Details, H4, Count, Input, Footer, Simplediv, Button,
-    Label, H5, Para, Detailssecond, InputContainer, Slider, Link,
-    AccreditContainer, AccreditContainer2, Accredit, AccreditInput } from "./Investment.style"
+import {
+  Header,
+  SideBarContainer,
+  Details,
+  H4,
+  Count,
+  Input,
+  Footer,
+  Simplediv,
+  Button,
+  Label,
+  H5,
+  Para,
+  Detailssecond,
+  InputContainer,
+  Slider,
+  Link,
+  AccreditContainer,
+  AccreditContainer2,
+  Accredit,
+  AccreditInput,
+  Container,
+} from "./Investment.style";
 import MoneyProgressBar from "../MoneyProgressBar/MoneyProgressBar";
 import SideBar from "../SideBar/SideBar";
+import styled from "styled-components";
+import { useState } from "react";
 import { getDocs, setDoc, doc, collection} from "firebase/firestore";
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "@firebase/firestore";
@@ -88,3 +110,4 @@ const Container2 = () => {
     )
 }
 export default Container2
+
