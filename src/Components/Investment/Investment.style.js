@@ -89,6 +89,7 @@ justify-content: flex-start;
 color: gray;
 font-size: small;
 text-align: left;
+  cursor: pointer;
 `
 export const Count = styled(H4)`
 text-align: left;
