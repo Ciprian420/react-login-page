@@ -45,8 +45,8 @@ const ConfirmationContainer = () => {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app)
     const colRef = collection(db, "users")
-const q = query(colRef, orderBy("createdAt", "desc"))
-    getDocs(q)
+const queryUsers = query(colRef, orderBy("createdAt", "desc"))
+    getDocs(queryUsers)
         .then((snapshot) => {
             let name = []
             snapshot.docs.forEach((doc) => {
