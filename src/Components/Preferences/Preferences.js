@@ -52,32 +52,7 @@ const Preferences = (props) => {
 
         });
     }
-    // const [checkboxes, setCheckboxes] = useState([{label: 'Single Family', value: true, id: 1}, {label: 'Residential multifamily', value: false, id: 2}])
-    // const info = []
-    // const checkboxRef = useRef();
-    // const save = (event) => {
-    //     const inputValue = event.target.value
-    //     if(checkboxRef.current.checked === true){
-    //         info.push(inputValue)
-    //         console.log(info)
-    //     }else if(checkboxRef.current.checked === false){
-    //         info.shift(inputValue)
-    //         console.log(info)
-    //     }
-    // }
-    // const handleClick = (event) => {
-    //     console.log(event.target.innerText);
-    // }
-    // const afterClick = () => {
-    //     console.log("yes")
-    // }
-    //    const onChange = (event, id) => {
-    //     checkboxes.findIndex(item => {
-    //       })
-    //     if(checkboxes.value = true){
-    //     }
-    //     console.log(id)
-    // }
+      
     return (
         <ContMain>
             <SideBarContainer><PreferencesSideBar/></SideBarContainer>
@@ -92,14 +67,6 @@ const Preferences = (props) => {
 
                     <H3font>What kind of real estate are u interested in?</H3font>
                     <Select>
-                        {/* {
-                                ['Single Family', 'Residential multifamily', 'Comercial retail', 'Comercial industrial', 'Comercial hospitality', 'Comercial werehousing', 'Comercial office', 'other'].map((name, idx)=><RealEstate><SelectInput onClick={!idx ? afterClick : ()=>{}} type="checkbox"></SelectInput><SelectPara>{name}</SelectPara></RealEstate>)
-                            } */}
-                        {/* {
-                                checkboxes
-                                .map(({label, value}, idx) => <RealEstate><SelectInput key={checkboxes.id} onChange={(item) => onChange(item = value)} onClick={!idx ? afterClick : ()=>{}} type="checkbox" checked={value}></SelectInput><SelectPara>{label}</SelectPara></RealEstate>)
-                            } */}
-
                         <RealEstate className="borderFamily">
                             <SelectInput className="checkboxFamily" type="checkbox" value="Family"/>
                             <SelectPara className="paragraphFamily">Family</SelectPara>
@@ -127,7 +94,7 @@ const Preferences = (props) => {
 
                         <RealEstate className="borderWarehousing">
                             <SelectInput className="checkboxWarehousing" type="checkbox" value="Warehousing" />
-                            <SelectPara className="paragraphWarehousing">Comercial werehousing</SelectPara>
+                            <SelectPara className="paragraphWarehousing">Comercial warehousing</SelectPara>
                         </RealEstate>
 
                         <RealEstate className="borderOffice">
