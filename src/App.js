@@ -14,6 +14,7 @@ function App() {
           <Route path="/" element={<Details />} />
           <Route path="/page2" element={<Container2 />} />
           <Route path="/page3" element={<Preferences />} />
+            <Route path="/page4" element={<Confirmation />} />
         </Routes>
       </Router>
   );

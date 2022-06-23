@@ -3,7 +3,7 @@ import { InputLonger, InputCont, SideBarContainer, Header, ContMain, DetailsCont
 import DetailSideBar from "../Details/DetailsSideBar"
 import { useForm } from "react-hook-form"
 import {useState, useEffect, useContext} from "react";
-import { getDocs, setDoc, doc, collection} from "firebase/firestore";
+import { getDocs, setDoc, doc, collection, serverTimestamp} from "firebase/firestore";
 import { db } from "../../firebase";
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "@firebase/firestore";
@@ -27,6 +27,10 @@ const makeid = (length) => {
 
 const Details = () => {
     let navigate = useNavigate()
+    const nextPage = () => {
+        navigate("/page2")
+    }
+
     const [Name, SetName] = useState("")
     const [Email, SetEmail] = useState("")
     const [Number, SetNumber] = useState("")
@@ -45,13 +49,14 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 const date = new Date().toString()
 const handleSubmit = async (e) => {
+    nextPage()
     e.preventDefault();
-    await setDoc(doc(db, "users", makeid(20)), {
+    const add = await setDoc(doc(db, "users", makeid(20)), {
         name: Name,
         email: Email,
         phone: Number,
         country: Country,
-        date: date,
+        createdAt: serverTimestamp()
     });
 }
 
@@ -86,8 +91,8 @@ const handleSubmit = async (e) => {
                     <Para color="#35a1ee">Expand privacy policy →</Para>
                     <Footer>
                         <Simplediv>
-                            <Button onClick={() => {navigate("/page2")}} color="#3988dd" backgroundColor="#edf7fd" >Skip for now</Button>
-                            <Button onClick={() => {navigate("/page2")}} type="submit" color="white" backgroundColor="#35a1ee">Next step→</Button>
+                            <Button onClick={nextPage} color="#3988dd" backgroundColor="#edf7fd" >Skip for now</Button>
+                            <Button onClick={handleSubmit} type="submit" color="white" backgroundColor="#35a1ee">Next step→</Button>
                         </Simplediv>
                     </Footer>
                         </form>
