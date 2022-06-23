@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 import Stefan from "../img/stefanel.png"
 
 export const Container = styled.div`

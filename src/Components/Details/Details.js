@@ -63,7 +63,9 @@ const handleSubmit = async (e) => {
 
     return (
         <ContMain>
-            <SideBar/>
+            <SideBarContainer>
+            <DetailSideBar></DetailSideBar>
+            </SideBarContainer>
             <DetailsCont>
                 <Detailssecond>
                     <Header>
