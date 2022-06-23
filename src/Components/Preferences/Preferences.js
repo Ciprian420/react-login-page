@@ -100,42 +100,42 @@ const Preferences = (props) => {
                             } */}
 
                         <RealEstate className="borderFamily">
-                            <SelectInput className="checkboxFamily" type="checkbox" value="Family" onClick={clickHandlerFamily}/>
+                            <SelectInput className="checkboxFamily" type="checkbox" value="Family"/>
                             <SelectPara className="paragraphFamily">Family</SelectPara>
                         </RealEstate>
 
                         <RealEstate className="borderMultifamily">
-                            <SelectInput className="checkboxMultifamily" type="checkbox" value="Residential multifamily" onClick={clickHandlerMultifamily}/>
+                            <SelectInput className="checkboxMultifamily" type="checkbox" value="Residential multifamily" />
                             <SelectPara className="paragraphMultifamily">Residential multifamily</SelectPara>
                         </RealEstate>
 
                         <RealEstate className="borderRetail">
-                            <SelectInput className="checkboxRetail" type="checkbox" value="Retail" onClick={clickHandlerRetail}/>
+                            <SelectInput className="checkboxRetail" type="checkbox" value="Retail"/>
                             <SelectPara className="paragraphRetail">Comercial retail</SelectPara>
                         </RealEstate>
 
                         <RealEstate className="borderIndustrial">
-                            <SelectInput className="checkboxIndustrial" type="checkbox"  value="Industrial" onClick={clickHandlerIndustrial}/>
+                            <SelectInput className="checkboxIndustrial" type="checkbox"  value="Industrial"/>
                             <SelectPara className="paragraphIndustrial">Comercial industrial</SelectPara>
                         </RealEstate>
 
                         <RealEstate className="borderHospitality">
-                            <SelectInput className="checkboxHospitality" type="checkbox" value="Hospitality" onClick={clickHandlerHospitality}/>
+                            <SelectInput className="checkboxHospitality" type="checkbox" value="Hospitality" />
                             <SelectPara  className="paragraphHospitality">Comercial hospitality</SelectPara>
                         </RealEstate>
 
                         <RealEstate className="borderWarehousing">
-                            <SelectInput className="checkboxWarehousing" type="checkbox" value="Warehousing" onClick={clickHandlerWarehousing}/>
+                            <SelectInput className="checkboxWarehousing" type="checkbox" value="Warehousing" />
                             <SelectPara className="paragraphWarehousing">Comercial werehousing</SelectPara>
                         </RealEstate>
 
                         <RealEstate className="borderOffice">
-                            <SelectInput className="checkboxOffice" type="checkbox" value="Office" onClick={clickHandlerOffice}/>
+                            <SelectInput className="checkboxOffice" type="checkbox" value="Office"/>
                             <SelectPara className="paragraphOffice">Comercial office</SelectPara>
                         </RealEstate>
 
                         <RealEstate className="borderOther">
-                            <SelectInput className="checkboxOther" type="checkbox" value="Other" onClick={clickHandlerOther(8, checkboxOther, borderOther, paragraphOther)}/>
+                            <SelectInput className="checkboxOther" type="checkbox" value="Other" />
                             <SelectPara className="paragraphOther">other</SelectPara>
                         </RealEstate>
 
