@@ -28,7 +28,7 @@ import {useEffect, useState} from "react";
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "@firebase/firestore";
 import { child, get } from "firebase/database";
-import {collection, getDocs} from "firebase/firestore";
+import {collection, getDocs,query, where, orderBy, getDoc} from "firebase/firestore";
 
 
 const ConfirmationContainer = () => {
@@ -45,15 +45,15 @@ const ConfirmationContainer = () => {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app)
     const colRef = collection(db, "users")
-
-    getDocs(colRef)
+const q = query(colRef, orderBy("createdAt", "desc"))
+    getDocs(q)
         .then((snapshot) => {
-            console.log(snapshot.docs)
+            let name = []
+            snapshot.docs.forEach((doc) => {
+                name.push({ ...doc.data(), id: doc.id })
+            })
+            console.log(name[0].name)
         })
-
-
-
-
     return (
         <ContMain>
             <SideBarContainer><ConfirmationSideBar/></SideBarContainer>

@@ -25,7 +25,7 @@ import MoneyProgressBar from "../MoneyProgressBar/MoneyProgressBar";
 import SideBar from "../SideBar/SideBar";
 import styled from "styled-components";
 import {createContext, useState} from "react";
-import { getDocs, setDoc, doc, collection} from "firebase/firestore";
+import { getDocs, setDoc, doc, collection, serverTimestamp} from "firebase/firestore";
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "@firebase/firestore";
 import InvestmentSideBar from "../Investment/InvestmentSideBar"
@@ -48,6 +48,9 @@ const makeid = () => {
 
 const Container2 = () => {
     let navigate = useNavigate()
+    const nextPage = () => {
+        navigate("/page3")
+    }
     const [Min, SetMin] = useState("")
     const [Max, SetMax] = useState("")
     const date = new Date().toString()
@@ -64,11 +67,12 @@ const Container2 = () => {
     const db = getFirestore(app)
 
     const handleSubmit = async (e) => {
+        nextPage()
         e.preventDefault();
-        await setDoc(doc(db, "users", makeid()), {
+        await setDoc(doc(db, "investmentInfo", makeid()), {
             min: Min,
             max: Max,
-            date: date,
+            createdAt: serverTimestamp()
         });
     }
     return (
@@ -107,8 +111,8 @@ const Container2 = () => {
                     <Footer>
                             <Para color="#3988dd" onClick={() => {navigate("/")}}>← Back to the previous</Para>
                         <Simplediv>
-                            <Button onClick={() => {navigate("/page3")}} color="#3988dd" backgroundColor="#edf7fd">Skip for now</Button>
-                            <Button onClick={() => {navigate("/page3")}} type="submit" color="white" backgroundColor="#35a1ee">Next stop→</Button>
+                            <Button onClick={nextPage} color="#3988dd" backgroundColor="#edf7fd">Skip for now</Button>
+                            <Button onClick={handleSubmit} type="submit" color="white" backgroundColor="#35a1ee">Next step</Button>
                         </Simplediv>
                     </Footer>
                 </form>
