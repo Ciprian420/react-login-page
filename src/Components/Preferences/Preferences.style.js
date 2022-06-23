@@ -81,6 +81,7 @@ justify-content: flex-start;
 color: gray;
 font-size: small;
 text-align: left;
+  cursor: pointer;
 `
 export const Link = styled.a`
 margin-top: 3px;

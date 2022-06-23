@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 function App() {
   return (
+      <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<Details />} />
@@ -16,6 +17,7 @@ function App() {
           <Route path="/page3" element={<Preferences />} />
         </Routes>
       </Router>
+      </div>
   );
 }
 

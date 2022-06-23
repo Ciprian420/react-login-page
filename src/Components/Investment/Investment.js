@@ -105,9 +105,7 @@ const Container2 = () => {
                     </AccreditContainer2>
                     </AccreditContainer>
                     <Footer>
-                        <Button onClick={() => {navigate("/")}}>
-                            <Para color="#3988dd">← Back to the previous</Para>
-                        </Button>
+                            <Para color="#3988dd" onClick={() => {navigate("/")}}>← Back to the previous</Para>
                         <Simplediv>
                             <Button onClick={() => {navigate("/page3")}} color="#3988dd" backgroundColor="#edf7fd">Skip for now</Button>
                             <Button onClick={() => {navigate("/page3")}} type="submit" color="white" backgroundColor="#35a1ee">Next stop→</Button>
