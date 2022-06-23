@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "@firebase/firestore";
 import {doc, setDoc} from "firebase/firestore";
-import {clickHandlerClass} from "./PrefrencesStyleFunction/PrefrencesStyleFunction";
+import {clickHandlerFamily, clickHandlerHospitality, clickHandlerIndustrial, clickHandlerMultifamily,
+     clickHandlerOffice, clickHandlerOther, clickHandlerRetail,clickHandlerWarehousing} from "./PrefrencesStyleFunction/PrefrencesStyleFunction";
 
 
 const makeid = (length) => {
@@ -135,7 +136,7 @@ const Preferences = (props) => {
                         </RealEstate>
 
                         <RealEstate className="borderOther">
-                            <SelectInput className="checkboxOther" type="checkbox" value="Other" onClick={clickHandlerOther(8, checkboxOther, borderOther, paragraphOther)}/>
+                            <SelectInput className="checkboxOther" type="checkbox" value="Other" onClick={(clickHandlerOther)}/>
                             <SelectPara className="paragraphOther">other</SelectPara>
                         </RealEstate>
 
