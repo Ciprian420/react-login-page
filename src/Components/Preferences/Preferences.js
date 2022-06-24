@@ -1,5 +1,21 @@
-import {   SelectPara, SelectInput, RealEstate, Select , H3font, Header, SideBarContainer, ContMain, DetailsCont , H3, H5, Para, Detailssecond, Link, Footer, Button, CustomDiv } from "./Preferences.style"
+import {   
+    SelectPara, 
+    SelectInput, 
+    RealEstate, 
+    Select , 
+    H3font, 
+    Header, 
+    SideBarContainer, 
+    H3, 
+    H5, 
+    DetailsSecond, 
+    Link, 
+    Footer,
+    Button, 
+    CustomDiv 
+} from "./Preferences.style"
 import PreferencesSideBar from "../Preferences/PreferencesSideBar"
+import {ContainerMain, CustomParagraph, InnerContainer} from "../Details/Details.style";
 import { useState } from "react"
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -54,22 +70,22 @@ const Preferences = (props) => {
     }
       
     return (
-        <ContMain>
+        <ContainerMain>
             <SideBarContainer><PreferencesSideBar/></SideBarContainer>
-            <DetailsCont>
-                <Detailssecond>
+            <InnerContainer>
+                <DetailsSecond>
                     <Header>
                         <H5>STEP 3 OF 3</H5>
-                        <Para>Lost or Have Troubles?<Link> Get Help  → </Link></Para>
+                        <CustomParagraph>Lost or Have Troubles?<Link> Get Help  → </Link></CustomParagraph>
                     </Header>
                     <H3>Investment Preferences</H3>
-                    <Para>This will help us figure out what your investment options are so that we can show you only possibly intresting for your deals</Para>
+                    <CustomParagraph>This will help us figure out what your investment options are so that we can show you only possibly intresting for your deals</CustomParagraph>
 
                     <H3font>What kind of real estate are u interested in?</H3font>
                     <Select>
                         <RealEstate className="borderFamily">
                             <SelectInput className="checkboxFamily" type="checkbox" value="Family"/>
-                            <SelectPara className="paragraphFamily">Family</SelectPara>
+                            <SelectPara className="paragraphFamily">Single Family</SelectPara>
                         </RealEstate>
 
                         <RealEstate className="borderMultifamily">
@@ -109,15 +125,15 @@ const Preferences = (props) => {
 
                     </Select>
                     <Footer>
-                        <Para color="#3988dd" onClick={() => {navigate("/page2")}}>← Back to the previous</Para>
+                        <CustomParagraph color="#3988dd" onClick={() => {navigate("/page2")}}>← Back to the previous</CustomParagraph>
                         <CustomDiv>
                             <Button onClick={nextPage} color="#3988dd" backgroundColor="#edf7fd">Skip for now</Button>
                             <Button onClick={handleSubmit} type="submit" color="white" backgroundColor="#35a1ee">Next step</Button>
                         </CustomDiv>
                     </Footer>
-                </Detailssecond>
-            </DetailsCont>
-        </ContMain>
+                </DetailsSecond>
+            </InnerContainer>
+        </ContainerMain>
     )
 }
 export default Preferences

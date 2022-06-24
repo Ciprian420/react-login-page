@@ -3,31 +3,30 @@ import styled from "styled-components"
 export const CustomDiv = styled.div`
 margin-top: 5px;
 `
+
 export const InputCont = styled.div`
 width: 100%;
 height: 150px;
 `
+
 export const SideBarContainer = styled.div`
 border-radius: 5px 0px 0px 5px;
 height: 600px;
 width: 350px;
 background-color: black;
 `
-export const ContMain = styled.div`
+
+export const ContainerMain = styled.div`
 display: flex;
 border-radius: 5px;
 width: 950px;
 height: 600px;
 background-color: #ffffff;
 position: absolute;
-z-index: 1
+z-index: 1;
 `
-// export const SideBar = styled.div`
-// height: 600px;
-// width: 350px;
-// background-color: black;
-// `
-export const DetailsCont = styled.div`
+
+export const InnerContainer = styled.div`
 display: flex;
 justify-content: center;
 width: 700px;
@@ -36,13 +35,15 @@ background-color: #ffffff;
 border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
 `
-export const Detailssecond = styled.div`
+
+export const DetailsSecond = styled.div`
 width: 450px;
 height: 600px;
 background-color: #ffffff;
 border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
 `
+
 export const Header = styled.div`
 margin-top: 10px;
 display: flex;
@@ -50,6 +51,7 @@ justify-content: space-between;
 width: 100%;
 height: 80px;
 `
+
 export const Footer = styled.div`
 justify-content: space-between;
 position: relative;
@@ -58,24 +60,29 @@ align-self: flex-end;
 display: flex;
 width: 100%;
 height: 50px;
-margin-bottom: 10px;
+margin-top: 3px;
+margin-bottom: 15px;
 `
+
 export const H3 = styled.h3`
 display: flex;
 margin-bottom: 0;
 font-family: 'Roboto', sans-serif;
 `
+
 export const H5 = styled.h5`
 margin-top: 15px;
 display: flex;
 left: 10px;
 color: gray;
 `
+
 export const H4 = styled.h4`
 font-family: 'Roboto', sans-serif;
 display: flex;
 `
-export const Para = styled.p`
+
+export const CustomParagraph = styled.p`
 display: flex;
 justify-content: flex-start;
 color: gray;
@@ -83,17 +90,20 @@ font-size: small;
 text-align: left;
   cursor: pointer;
 `
+
 export const Link = styled.a`
 margin-top: 3px;
 font-family: 'Roboto', sans-serif;
 color: #3988dd;
 `
+
 export const H3font = styled.h3`
 display: flex;
 margin-bottom: 0;
 font-size: 13px;
 font-family: 'Kdam Thmor Pro', sans-serif;
 `
+
 export const Button = styled.button`
 font-family: 'Roboto', sans-serif;
 color: ${(props) => props.color};
@@ -105,9 +115,10 @@ border-radius: 3px;
 background-color: ${(props) => props.backgroundColor};
 margin-right: 10px;
 &:active{
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 `
+
 export const Select = styled.div`
 display: flex;
 width: 490px;
@@ -116,7 +127,9 @@ flex-wrap: wrap;
 position: relative;
 left: -15px;
 `
+
 export const RealEstate = styled.div`
+padding-right: 5px;
 display: flex;
 width: 90px;
 height: 100px;
@@ -126,16 +139,20 @@ margin-bottom: 0;
 border-radius: 3px;
 border: solid 2px lightgrey;
 background-color: #fff;
+`
 
-`
 export const SelectInput = styled.input`
+margin-top: 10px;
+margin-left: 10px;
 display: flex;
 `
+
 export const SelectPara = styled.p`
+margin-top: 60px;
+margin-right: 20px;
+width: 70px;
+height: 20px;
 font-size: 12px;
-display: flex;
-text-align: left;
-justify-self: center;
-align-self: flex-end;
+  text-align: left;
 color: gray;
 `

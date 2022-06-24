@@ -66,7 +66,7 @@ bottom: -30px;
 display: flex;
 width: 100%;
 height: 50px;
-margin-bottom: 10px;
+margin-bottom: 9px;
 `
 export const Button = styled.button`
 font-family: 'Roboto', sans-serif;
