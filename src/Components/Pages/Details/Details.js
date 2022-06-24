@@ -16,14 +16,13 @@ import {
     ButtonsContainer, 
     Input 
 } from "./Details.style"
-import DetailSideBar from "../Details/DetailsSideBar"
+import {Container, SloganContainer, Slogan, United, Properties, ProgressBarContainer, ProgressTextContainer, ProgressBar, CheckedPage, Lines, ProgressText, QuoteContainer, Image, ImageContainer, TextContainer} from "../../SideBar/SideBarStyle"
 import { useForm } from "react-hook-form"
 import {useState, useEffect, useContext} from "react";
 import { getDocs, setDoc, doc, collection, serverTimestamp} from "firebase/firestore";
-import { db } from "../../firebase";
+import { db } from "../../../firebase";
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "@firebase/firestore";
-import SideBar from "../SideBar/SideBar";
 import { useLocation } from "react-router"
 import { useNavigate } from 'react-router-dom';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
@@ -79,7 +78,55 @@ const handleSubmit = async (e) => {
 
     return (
         <ContainerMain>
-            <SideBarContainer><DetailSideBar/></SideBarContainer>
+            <SideBarContainer>
+                <Container>
+      <SloganContainer>
+        <Slogan>
+          <United>UNITED</United>
+          <Properties>PROPERITIES</Properties>
+        </Slogan>
+      </SloganContainer>
+      <ProgressBarContainer>
+        <div>
+          <ProgressTextContainer color="white">
+            <ProgressBar color="white">
+              <CheckedPage/>
+            </ProgressBar>
+         <ProgressText color="white">Contact Details</ProgressText>
+          </ProgressTextContainer>
+        </div>
+        <Lines color="white"/>
+        <Lines color="white"/>
+        <div>
+          <ProgressTextContainer color="#6dc7fc">
+            <ProgressBar color="#6dc7fc"/>
+            <ProgressText color="#6dc7fc">Investment Plans</ProgressText>
+          </ProgressTextContainer>
+        </div>
+        <Lines color="#6dc7fc"/>
+        <Lines color="#6dc7fc"/>
+        <div>
+          <ProgressTextContainer color="#6dc7fc">
+            <ProgressBar color="#6dc7fc"/>
+            <ProgressText color="#6dc7fc">Investment Preferences</ProgressText>
+          </ProgressTextContainer>
+        </div>
+      </ProgressBarContainer>
+      <QuoteContainer>
+        <ImageContainer>
+          <Image />
+        </ImageContainer>
+        <TextContainer>
+          <p>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, eaque.{" "}
+          </p>
+          <h4>Lorem ipsum.</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </TextContainer>
+      </QuoteContainer>
+    </Container>
+    </SideBarContainer>
             <InnerContainer>
                 <DetailsSecond>
                     <Header>

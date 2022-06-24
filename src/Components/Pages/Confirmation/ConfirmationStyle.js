@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import geeklab from "../img/logus.png"
+import geeklab from "../../img/logus.png"
 
 export const ContMain = styled.div`
 display: flex;

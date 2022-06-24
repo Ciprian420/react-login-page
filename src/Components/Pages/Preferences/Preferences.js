@@ -14,8 +14,8 @@ import {
     Button, 
     CustomDiv 
 } from "./Preferences.style"
-import PreferencesSideBar from "../Preferences/PreferencesSideBar"
 import {ContainerMain, CustomParagraph, InnerContainer} from "../Details/Details.style";
+import {Container, SloganContainer, Slogan, United, Properties, ProgressBarContainer, ProgressTextContainer, ProgressBar, CheckedPage, Lines, ProgressText, QuoteContainer, Image, ImageContainer, TextContainer} from "../../SideBar/SideBarStyle"
 import { useState } from "react"
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +23,7 @@ import {initializeApp} from "firebase/app";
 import {getFirestore} from "@firebase/firestore";
 import {doc, setDoc} from "firebase/firestore";
 import {clickHandlerFamily, clickHandlerHospitality, clickHandlerIndustrial, clickHandlerMultifamily,
-     clickHandlerOffice, clickHandlerOther, clickHandlerRetail,clickHandlerWarehousing} from "./PrefrencesStyleFunction/PrefrencesStyleFunction";
+     clickHandlerOffice, clickHandlerOther, clickHandlerRetail,clickHandlerWarehousing} from "../../PreferencesStyleFunction/PreferencesStyleFunction";
 
 
 const makeid = (length) => {
@@ -71,8 +71,60 @@ const Preferences = (props) => {
       
     return (
         <ContainerMain>
-            <SideBarContainer><PreferencesSideBar/></SideBarContainer>
-            <InnerContainer>
+            <SideBarContainer>
+                <Container>
+      <SloganContainer>
+        <Slogan>
+          <United>UNITED</United>
+          <Properties>PROPERITIES</Properties>
+        </Slogan>
+      </SloganContainer>
+      <ProgressBarContainer>
+        <div>
+          <ProgressTextContainer color="white">
+            <ProgressBar color="white">
+              <CheckedPage/>
+            </ProgressBar>
+         <ProgressText color="white">Contact Details</ProgressText>
+          </ProgressTextContainer>
+        </div>
+        <Lines color="white"/>
+        <Lines color="white"/>
+        <div>
+          <ProgressTextContainer color="white">
+            <ProgressBar color="white">
+              <CheckedPage/>
+            </ProgressBar>
+            <ProgressText color="white">Investment Plans</ProgressText>
+          </ProgressTextContainer>
+        </div>
+        <Lines color="white"/>
+        <Lines color="white"/>
+        <div>
+          <ProgressTextContainer color="white">
+            <ProgressBar color="white">
+              <CheckedPage/>
+              </ProgressBar>
+            <ProgressText color="white">Investment Preferences</ProgressText>
+          </ProgressTextContainer>
+        </div>
+      </ProgressBarContainer>
+      <QuoteContainer>
+        <ImageContainer>
+          <Image />
+        </ImageContainer>
+        <TextContainer>
+          <p>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, eaque.{" "}
+          </p>
+          <h4>Lorem ipsum.</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </TextContainer>
+      </QuoteContainer>
+    </Container>
+    </SideBarContainer>
+            <InnerContainer>    
                 <DetailsSecond>
                     <Header>
                         <H5>STEP 3 OF 3</H5>
