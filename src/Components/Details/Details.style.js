@@ -1,13 +1,13 @@
 import styled from "styled-components"
 
-export const Simplediv = styled.div`
+export const ButtonsContainer = styled.div`
 margin-top: 5px;
 `
 export const InputCont = styled.div`
 width: 100%;
 height: 150px;
 `
-export const ContMain = styled.div`
+export const ContainerMain = styled.div`
 display: flex;
 border-radius: 5px;
 width: 950px;
@@ -22,7 +22,7 @@ height: 600px;
 width: 350px;
 background-color: black;
 `
-export const DetailsCont = styled.div`
+export const InnerContainer = styled.div`
 display: flex;
 justify-content: center;
 width: 700px;
@@ -31,7 +31,7 @@ background-color: #ffffff;
 border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
 `
-export const Detailssecond = styled.div`
+export const DetailsSecond = styled.div`
 width: 450px;
 height: 600px;
 background-color: #ffffff;
@@ -53,6 +53,8 @@ align-self: flex-end;
 display: flex;
 width: 100%;
 height: 50px;
+margin-left: 210px;
+margin-top: 40px;
 margin-bottom: 10px;
 `
 export const H3 = styled.h3`
@@ -70,7 +72,7 @@ export const H4 = styled.h4`
 font-family: 'Roboto', sans-serif;
 display: flex;
 `
-export const Para = styled.p`
+export const CustomParagraph = styled.p`
 display: flex;
 justify-content: flex-start;
 color: gray;
@@ -109,7 +111,7 @@ export const Input = styled.input`
     border-bottom: #3988dd solid 2px;
 }
 `
-export const InputLonger = styled.input`
+export const LongerInput = styled.input`
 margin: 10px;
 width: 420px;
 height: 20px;

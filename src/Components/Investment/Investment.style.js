@@ -1,16 +1,14 @@
 import styled from "styled-components"
 
-
-export const Container = styled.div`
+export const ContainerMain = styled.div`
 display: flex;
 border-radius: 5px;
 width: 950px;
 height: 600px;
 background-color: #ffffff;
 position: absolute;
-z-index: 2
+z-index: 2;
 `
-
 
 export const SideBarContainer = styled.div`
 border-radius: 5px 0px 0px 5px;
@@ -18,15 +16,19 @@ height: 600px;
 width: 350px;
 background-color: black;
 `
+
 export const Link = styled.a`
 margin-top: 3px;
 font-family: 'Roboto', sans-serif;
 color: #3988dd;
 `
-export const Simplediv = styled.div`
+
+export const ButtonsContainer = styled.div`
 margin-top: 5px;
 `
+
 export const Footer = styled.div`
+
 justify-content: space-between;
 position: relative;
 bottom: -50px;
@@ -34,7 +36,10 @@ align-self: flex-end;
 display: flex;
 width: 100%;
 height: 50px;
+margin-top: 10px;
+margin-bottom: 15px;
 `
+
 export const Button = styled.button`
 font-family: 'Roboto', sans-serif;
 color: ${(props) => props.color};
@@ -46,10 +51,11 @@ border-radius: 3px;
 background-color: ${(props) => props.backgroundColor};
 margin-right: 10px;
 &:active{
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 `
-export const Details = styled.div`
+
+export const InnerContainer = styled.div`
 display: flex;
 justify-content: center;
 width: 600px;
@@ -58,13 +64,15 @@ background-color: #ffffff;
 border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
 `
-export const Detailssecond = styled.div`
+
+export const DetailsSecond = styled.div`
 width: 450px;
 height: 600px;
 background-color: #ffffff;
 border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
 `
+
 export const Header = styled.div`
 margin-top: 10px;
 display: flex;
@@ -72,18 +80,21 @@ justify-content: space-between;
 width: 100%;
 height: 80px;
 `
+
 export const H4 = styled.h4`
 display: flex;
 font-size: x-large;
 margin-bottom: 0;
 `
+
 export const H5 = styled.h5`
 margin-top: 15px;
 display: flex;
 left: 10px;
 color: gray;
 `
-export const Para = styled.p`
+
+export const CustomParagraph = styled.p`
 display: flex;
 justify-content: flex-start;
 color: gray;
@@ -91,19 +102,22 @@ font-size: small;
 text-align: left;
   cursor: pointer;
 `
+
 export const Count = styled(H4)`
 text-align: left;
 font-size: large;
 `
+
 export const InputContainer = styled.div`
 width: 100%;
 height: 80px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-
 `
+
 export const Input = styled.input`
+margin-right: 11px;
 width: 210px;
 border-top: 0;
 border-left: 0;
@@ -111,22 +125,26 @@ border-right: 0;
 height: 30px;
 border-color: #d5d9dc;
 &:focus {
-    outline: none;
-    border-bottom-color: #35a0ee;
+  outline: none;
+  border-bottom-color: #35a0ee;
 }
 `
+
 export const Label = styled.label`
 padding-bottom: 5px;
 `
+
 export const Slider = styled.div`
 width: 100%;
 height: 100px;
 `
+
 export const AccreditContainer = styled.div`
 width: 100%;
 display: flex;
 flex-direction: row;
 `
+
 export const AccreditContainer2 = styled.div`
 display: flex;
 text-align: center;
@@ -138,10 +156,12 @@ height: 30px;
 margin-top: 10px;
 padding-right: 20px;
 `
+
 export const Accredit = styled(H4)`
 margin-top: 0;
 font-size: medium;
 `
+
 export const AccreditInput = styled.input`
 margin-right: 30px;
 `
