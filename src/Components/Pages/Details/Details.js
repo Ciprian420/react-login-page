@@ -1,13 +1,28 @@
 
-import { InputLonger, InputCont, SideBarContainer, Header, ContMain, DetailsCont ,H4, H3, H5, Para, Detailssecond, Link, Footer, Button, Simplediv, Input } from "./Details.style"
-import DetailSideBar from "../Details/DetailsSideBar"
+import { 
+    LongerInput, 
+    SideBarContainer, 
+    Header, 
+    ContainerMain, 
+    InnerContainer,
+    H4, 
+    H3, 
+    H5, 
+    CustomParagraph, 
+    DetailsSecond, 
+    Link, 
+    Footer, 
+    Button, 
+    ButtonsContainer, 
+    Input 
+} from "./Details.style"
+import {Container, SloganContainer, Slogan, United, Properties, ProgressBarContainer, ProgressTextContainer, ProgressBar, CheckedPage, Lines, ProgressText, QuoteContainer, Image, ImageContainer, TextContainer} from "../../SideBar/SideBarStyle"
 import { useForm } from "react-hook-form"
 import {useState, useEffect, useContext} from "react";
 import { getDocs, setDoc, doc, collection, serverTimestamp} from "firebase/firestore";
-import { db } from "../../firebase";
+import { db } from "../../../firebase";
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "@firebase/firestore";
-import SideBar from "../SideBar/SideBar";
 import { useLocation } from "react-router"
 import { useNavigate } from 'react-router-dom';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
@@ -62,16 +77,64 @@ const handleSubmit = async (e) => {
 
 
     return (
-        <ContMain>
-            <SideBar/>
-            <DetailsCont>
-                <Detailssecond>
+        <ContainerMain>
+            <SideBarContainer>
+                <Container>
+      <SloganContainer>
+        <Slogan>
+          <United>UNITED</United>
+          <Properties>PROPERITIES</Properties>
+        </Slogan>
+      </SloganContainer>
+      <ProgressBarContainer>
+        <div>
+          <ProgressTextContainer color="white">
+            <ProgressBar color="white">
+              <CheckedPage/>
+            </ProgressBar>
+         <ProgressText color="white">Contact Details</ProgressText>
+          </ProgressTextContainer>
+        </div>
+        <Lines color="white"/>
+        <Lines color="white"/>
+        <div>
+          <ProgressTextContainer color="#6dc7fc">
+            <ProgressBar color="#6dc7fc"/>
+            <ProgressText color="#6dc7fc">Investment Plans</ProgressText>
+          </ProgressTextContainer>
+        </div>
+        <Lines color="#6dc7fc"/>
+        <Lines color="#6dc7fc"/>
+        <div>
+          <ProgressTextContainer color="#6dc7fc">
+            <ProgressBar color="#6dc7fc"/>
+            <ProgressText color="#6dc7fc">Investment Preferences</ProgressText>
+          </ProgressTextContainer>
+        </div>
+      </ProgressBarContainer>
+      <QuoteContainer>
+        <ImageContainer>
+          <Image />
+        </ImageContainer>
+        <TextContainer>
+          <p>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, eaque.{" "}
+          </p>
+          <h4>Lorem ipsum.</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </TextContainer>
+      </QuoteContainer>
+    </Container>
+    </SideBarContainer>
+            <InnerContainer>
+                <DetailsSecond>
                     <Header>
                         <H5>STEP 1 OF 3</H5>
-                        <Para>Lost or Have Troubles?<Link> Get Help  → </Link></Para>
+                        <CustomParagraph>Lost or Have Troubles?<Link> Get Help  → </Link></CustomParagraph>
                     </Header>
                     <H3>Contact Details</H3>
-                    <Para>welcome to United Properties, we are glad to see you! Let's get started by  letting us know a little</Para>
+                    <CustomParagraph>welcome to United Properties, we are glad to see you! Let's get started by  letting us know a little</CustomParagraph>
                         <form onSubmit={handleSubmit}>
                             <Input type="tel" placeholder="Full name"
                                    value={Name}
@@ -80,25 +143,25 @@ const handleSubmit = async (e) => {
                             <Input placeholder="tel"  inputMode="numeric" autoComplete="cc-number"
                                    value={Number}
                                    onChange={(e) => SetNumber(e.target.value)}/>
-                        <InputLonger placeholder="Email address"
+                        <LongerInput placeholder="Email address"
                                      value={Email}
                                      onChange={(e) => SetEmail(e.target.value)}/>
-                        <InputLonger placeholder="Country"
+                        <LongerInput placeholder="Country"
                                      value={Country}
                                      onChange={(e) => SetCountry(e.target.value)}/>
                     <H4>Privacy Policy</H4>
-                    <Para>we know you care about how personal information is used and shared, so we take your privacy seriously</Para>
-                    <Para color="#35a1ee">Expand privacy policy →</Para>
+                    <CustomParagraph>we know you care about how personal information is used and shared, so we take your privacy seriously</CustomParagraph>
+                    <CustomParagraph color="#35a1ee">Expand privacy policy →</CustomParagraph>
                     <Footer>
-                        <Simplediv>
+                        <ButtonsContainer>
                             <Button onClick={nextPage} color="#3988dd" backgroundColor="#edf7fd" >Skip for now</Button>
                             <Button onClick={handleSubmit} type="submit" color="white" backgroundColor="#35a1ee">Next step→</Button>
-                        </Simplediv>
+                        </ButtonsContainer>
                     </Footer>
                         </form>
-                </Detailssecond>
-            </DetailsCont>
-        </ContMain>
+                </DetailsSecond>
+            </InnerContainer>
+        </ContainerMain>
     )
 }
 export default Details

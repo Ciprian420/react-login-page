@@ -1,5 +1,21 @@
-import {   SelectPara, SelectInput, RealEstate, Select , H3font, Header, SideBarContainer, ContMain, DetailsCont , H3, H5, Para, Detailssecond, Link, Footer, Button, CustomDiv } from "./Preferences.style"
-import PreferencesSideBar from "../Preferences/PreferencesSideBar"
+import {   
+    SelectPara, 
+    SelectInput, 
+    RealEstate, 
+    Select , 
+    H3font, 
+    Header, 
+    SideBarContainer, 
+    H3, 
+    H5, 
+    DetailsSecond, 
+    Link, 
+    Footer,
+    Button, 
+    CustomDiv 
+} from "./Preferences.style"
+import {ContainerMain, CustomParagraph, InnerContainer} from "../Details/Details.style";
+import {Container, SloganContainer, Slogan, United, Properties, ProgressBarContainer, ProgressTextContainer, ProgressBar, CheckedPage, Lines, ProgressText, QuoteContainer, Image, ImageContainer, TextContainer} from "../../SideBar/SideBarStyle"
 import { useState } from "react"
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +23,7 @@ import {initializeApp} from "firebase/app";
 import {getFirestore} from "@firebase/firestore";
 import {doc, setDoc} from "firebase/firestore";
 import {clickHandlerFamily, clickHandlerHospitality, clickHandlerIndustrial, clickHandlerMultifamily,
-     clickHandlerOffice, clickHandlerOther, clickHandlerRetail,clickHandlerWarehousing} from "./PrefrencesStyleFunction/PrefrencesStyleFunction";
+     clickHandlerOffice, clickHandlerOther, clickHandlerRetail,clickHandlerWarehousing} from "../../PreferencesStyleFunction/PreferencesStyleFunction";
 
 
 const makeid = (length) => {
@@ -52,57 +68,76 @@ const Preferences = (props) => {
 
         });
     }
-    // const [checkboxes, setCheckboxes] = useState([{label: 'Single Family', value: true, id: 1}, {label: 'Residential multifamily', value: false, id: 2}])
-    // const info = []
-    // const checkboxRef = useRef();
-    // const save = (event) => {
-    //     const inputValue = event.target.value
-    //     if(checkboxRef.current.checked === true){
-    //         info.push(inputValue)
-    //         console.log(info)
-    //     }else if(checkboxRef.current.checked === false){
-    //         info.shift(inputValue)
-    //         console.log(info)
-    //     }
-    // }
-    // const handleClick = (event) => {
-    //     console.log(event.target.innerText);
-    // }
-    // const afterClick = () => {
-    //     console.log("yes")
-    // }
-    //    const onChange = (event, id) => {
-    //     checkboxes.findIndex(item => {
-    //       })
-    //     if(checkboxes.value = true){
-    //     }
-    //     console.log(id)
-    // }
+      
     return (
-        <ContMain>
-            <SideBarContainer><PreferencesSideBar/></SideBarContainer>
-            <DetailsCont>
-                <Detailssecond>
+        <ContainerMain>
+            <SideBarContainer>
+                <Container>
+      <SloganContainer>
+        <Slogan>
+          <United>UNITED</United>
+          <Properties>PROPERITIES</Properties>
+        </Slogan>
+      </SloganContainer>
+      <ProgressBarContainer>
+        <div>
+          <ProgressTextContainer color="white">
+            <ProgressBar color="white">
+              <CheckedPage/>
+            </ProgressBar>
+         <ProgressText color="white">Contact Details</ProgressText>
+          </ProgressTextContainer>
+        </div>
+        <Lines color="white"/>
+        <Lines color="white"/>
+        <div>
+          <ProgressTextContainer color="white">
+            <ProgressBar color="white">
+              <CheckedPage/>
+            </ProgressBar>
+            <ProgressText color="white">Investment Plans</ProgressText>
+          </ProgressTextContainer>
+        </div>
+        <Lines color="white"/>
+        <Lines color="white"/>
+        <div>
+          <ProgressTextContainer color="white">
+            <ProgressBar color="white">
+              <CheckedPage/>
+              </ProgressBar>
+            <ProgressText color="white">Investment Preferences</ProgressText>
+          </ProgressTextContainer>
+        </div>
+      </ProgressBarContainer>
+      <QuoteContainer>
+        <ImageContainer>
+          <Image />
+        </ImageContainer>
+        <TextContainer>
+          <p>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, eaque.{" "}
+          </p>
+          <h4>Lorem ipsum.</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </TextContainer>
+      </QuoteContainer>
+    </Container>
+    </SideBarContainer>
+            <InnerContainer>    
+                <DetailsSecond>
                     <Header>
                         <H5>STEP 3 OF 3</H5>
-                        <Para>Lost or Have Troubles?<Link> Get Help  → </Link></Para>
+                        <CustomParagraph>Lost or Have Troubles?<Link> Get Help  → </Link></CustomParagraph>
                     </Header>
                     <H3>Investment Preferences</H3>
-                    <Para>This will help us figure out what your investment options are so that we can show you only possibly intresting for your deals</Para>
+                    <CustomParagraph>This will help us figure out what your investment options are so that we can show you only possibly intresting for your deals</CustomParagraph>
 
                     <H3font>What kind of real estate are u interested in?</H3font>
                     <Select>
-                        {/* {
-                                ['Single Family', 'Residential multifamily', 'Comercial retail', 'Comercial industrial', 'Comercial hospitality', 'Comercial werehousing', 'Comercial office', 'other'].map((name, idx)=><RealEstate><SelectInput onClick={!idx ? afterClick : ()=>{}} type="checkbox"></SelectInput><SelectPara>{name}</SelectPara></RealEstate>)
-                            } */}
-                        {/* {
-                                checkboxes
-                                .map(({label, value}, idx) => <RealEstate><SelectInput key={checkboxes.id} onChange={(item) => onChange(item = value)} onClick={!idx ? afterClick : ()=>{}} type="checkbox" checked={value}></SelectInput><SelectPara>{label}</SelectPara></RealEstate>)
-                            } */}
-
                         <RealEstate className="borderFamily">
                             <SelectInput className="checkboxFamily" type="checkbox" value="Family"/>
-                            <SelectPara className="paragraphFamily">Family</SelectPara>
+                            <SelectPara className="paragraphFamily">Single Family</SelectPara>
                         </RealEstate>
 
                         <RealEstate className="borderMultifamily">
@@ -127,7 +162,7 @@ const Preferences = (props) => {
 
                         <RealEstate className="borderWarehousing">
                             <SelectInput className="checkboxWarehousing" type="checkbox" value="Warehousing" />
-                            <SelectPara className="paragraphWarehousing">Comercial werehousing</SelectPara>
+                            <SelectPara className="paragraphWarehousing">Comercial warehousing</SelectPara>
                         </RealEstate>
 
                         <RealEstate className="borderOffice">
@@ -142,15 +177,15 @@ const Preferences = (props) => {
 
                     </Select>
                     <Footer>
-                        <Para color="#3988dd" onClick={() => {navigate("/page2")}}>← Back to the previous</Para>
+                        <CustomParagraph color="#3988dd" onClick={() => {navigate("/page2")}}>← Back to the previous</CustomParagraph>
                         <CustomDiv>
                             <Button onClick={nextPage} color="#3988dd" backgroundColor="#edf7fd">Skip for now</Button>
                             <Button onClick={handleSubmit} type="submit" color="white" backgroundColor="#35a1ee">Next step</Button>
                         </CustomDiv>
                     </Footer>
-                </Detailssecond>
-            </DetailsCont>
-        </ContMain>
+                </DetailsSecond>
+            </InnerContainer>
+        </ContainerMain>
     )
 }
 export default Preferences

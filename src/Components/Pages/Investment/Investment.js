@@ -1,35 +1,31 @@
 import {
   Header,
   SideBarContainer,
-  Details,
+  DetailsSecond,
   H4,
   Count,
   Input,
   Footer,
-  Simplediv,
+  ButtonsContainer,
   Button,
   Label,
   H5,
-  Para,
-  Detailssecond,
-  InputContainer,
   Slider,
   Link,
   AccreditContainer,
   AccreditContainer2,
   Accredit,
   AccreditInput,
-  Container,
+  CustomDiv,
 } from "./Investment.style";
-import MoneyProgressBar from "../MoneyProgressBar/MoneyProgressBar";
-import SideBar from "../SideBar/SideBar";
+import MoneyProgressBar from "../../MoneyProgressBar/MoneyProgressBar";
 import styled from "styled-components";
 import {createContext, useState} from "react";
 import { getDocs, setDoc, doc, collection, serverTimestamp} from "firebase/firestore";
 import {initializeApp} from "firebase/app";
 import {getFirestore} from "@firebase/firestore";
-import InvestmentSideBar from "../Investment/InvestmentSideBar"
-import {ContMain} from "../Details/Details.style";
+import {Container, SloganContainer, Slogan, United, Properties, ProgressBarContainer, ProgressTextContainer, ProgressBar, CheckedPage, Lines, ProgressText, QuoteContainer, Image, ImageContainer, TextContainer} from "../../SideBar/SideBarStyle"
+import {ContainerMain, CustomParagraph, InnerContainer} from "../Details/Details.style";
 import {BrowserRouter as Router, Route, Routes, useNavigate} from "react-router-dom";
 import React from "react";
 
@@ -46,7 +42,7 @@ const makeid = () => {
 }
 
 
-const Container2 = () => {
+const Investment = () => {
     let navigate = useNavigate()
     const nextPage = () => {
         navigate("/page3")
@@ -76,16 +72,66 @@ const Container2 = () => {
         });
     }
     return (
-        <ContMain>
-            <SideBarContainer><InvestmentSideBar/></SideBarContainer>
-            <Details>
-                <Detailssecond>
+        <ContainerMain>
+            <SideBarContainer>
+<Container>
+      <SloganContainer>
+        <Slogan>
+          <United>UNITED</United>
+          <Properties>PROPERITIES</Properties>
+        </Slogan>
+      </SloganContainer>
+      <ProgressBarContainer>
+        <div>
+          <ProgressTextContainer color="white">
+            <ProgressBar color="white">
+              <CheckedPage/>
+            </ProgressBar>
+         <ProgressText color="white">Contact Details</ProgressText>
+          </ProgressTextContainer>
+        </div>
+        <Lines color="white"/>
+        <Lines color="white"/>
+        <div>
+          <ProgressTextContainer color="white">
+            <ProgressBar color="white">
+              <CheckedPage/>
+            </ProgressBar>
+            <ProgressText color="white">Investment Plans</ProgressText>
+          </ProgressTextContainer>
+        </div>
+        <Lines color="white"/>
+        <Lines color="white"/>
+        <div>
+          <ProgressTextContainer color="#6dc7fc">
+            <ProgressBar color="#6dc7fc"/>
+            <ProgressText color="#6dc7fc">Investment Preferences</ProgressText>
+          </ProgressTextContainer>
+        </div>
+      </ProgressBarContainer>
+      <QuoteContainer>
+        <ImageContainer>
+          <Image/>
+        </ImageContainer>
+        <TextContainer>
+          <p>
+            {" "}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, eaque.{" "}
+          </p>
+          <h4>Lorem ipsum.</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </TextContainer>
+      </QuoteContainer>
+    </Container>
+</SideBarContainer>
+            <InnerContainer>
+                <DetailsSecond>
                 <Header>
                         <H5>STEP 2 OF 3</H5>
-                        <Para>Lost or Have Troubles?<Link> Get Help  → </Link></Para>
+                        <CustomParagraph>Lost or Have Troubles?<Link> Get Help  → </Link></CustomParagraph>
                     </Header>
                     <H4>Investment Plans</H4>
-                    <Para style={{}} >Let us know about your investment plans. This will help us get you to the right expert who will help u further</Para>
+                    <CustomParagraph style={{}} >Let us know about your investment plans. This will help us get you to the right expert who will help u further</CustomParagraph>
                     <Count>How much are you planning to invest in this year?</Count>
                     <form onSubmit={handleSubmit}>
                         <Input placeholder="From"
@@ -109,17 +155,17 @@ const Container2 = () => {
                     </AccreditContainer2>
                     </AccreditContainer>
                     <Footer>
-                            <Para color="#3988dd" onClick={() => {navigate("/")}}>← Back to the previous</Para>
-                        <Simplediv>
+                            <CustomParagraph color="#3988dd" onClick={() => {navigate("/")}}>← Back to the previous</CustomParagraph>
+                        <ButtonsContainer>
                             <Button onClick={nextPage} color="#3988dd" backgroundColor="#edf7fd">Skip for now</Button>
-                            <Button onClick={handleSubmit} type="submit" color="white" backgroundColor="#35a1ee">Next step</Button>
-                        </Simplediv>
+                            <Button onClick={handleSubmit} type="submit" color="white" backgroundColor="#35a1ee">Next step→</Button>
+                        </ButtonsContainer>
                     </Footer>
                 </form>
-                </Detailssecond>
-            </Details>
-        </ContMain>
+                </DetailsSecond>
+            </InnerContainer>
+        </ContainerMain>
     )
 }
-export default Container2
+export default Investment
 
