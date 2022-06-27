@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import './App.css';
-import Details from './Components/Details/Details';
-import Preferences from './Components/Preferences/Preferences';
-import Investment from "./Components/Investment/Investment";
-import Confirmation from './Components/Confirmation/Confirmation';
+import Details from './Components/Pages/Details/Details';
+import Preferences from './Components/Pages/Preferences/Preferences';
+import Investment from "./Components/Pages/Investment/Investment";
+import Confirmation from './Components/Pages/Confirmation/Confirmation';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 function App() {

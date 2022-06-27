@@ -30,7 +30,7 @@ import {
     ProjectContainer, 
     Last
 } from "./ConfirmationStyle"
-import ConfirmationSideBar from "./ConfirmationSideBar"
+import {Container, SloganContainer, Slogan, United, Properties, ProgressBarContainer, QuoteContainer, Image, ImageContainer, TextContainer} from "../../SideBar/SideBarStyle"
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import { getDatabase, ref, onValue} from "firebase/database";
 import {useEffect, useState} from "react";
@@ -39,6 +39,8 @@ import {getFirestore} from "@firebase/firestore";
 import { child, get } from "firebase/database";
 import {collection, getDocs,query, where, orderBy, getDoc} from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import Stefan from "../../img/stefanel.png"
+
 
 
 const ConfirmationContainer = () => {
@@ -104,7 +106,31 @@ const ConfirmationContainer = () => {
         }) 
     return (
         <ContMain>
-            <SideBarContainer><ConfirmationSideBar/></SideBarContainer>
+            <SideBarContainer>
+                <Container img={Stefan}>
+        <SloganContainer>
+          <Slogan>
+            <United>UNITED</United>
+            <Properties>PROPERITIES</Properties>
+          </Slogan>
+        </SloganContainer>
+        <ProgressBarContainer>
+        </ProgressBarContainer>
+        <QuoteContainer>
+          <ImageContainer>
+            <Image/>
+          </ImageContainer>
+          <TextContainer>
+            <p>
+              {" "}
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, eaque.{" "}
+            </p>
+            <h4>Lorem ipsum.</h4>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </TextContainer>
+        </QuoteContainer>
+      </Container>
+      </SideBarContainer>
             <Details>
                 <Detailssecond>
                     <Header/>

@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import Stefan from "../img/stefanel.png"
 
 export const Container = styled.div`
+  background-image: url('${props => props.img}');
+  background-size: cover;
   background-color: hsl(205deg 84% 57%);
   width: 350px;
   height: 600px;
@@ -111,7 +114,7 @@ export const ProgressBar = styled.div`
   width: 15px;
   height: 15px;
   border-radius: 3px;
-  border: 3px solid white;
+  border: 3px solid ${props => props.color};
 `
 
 export const CheckedPage = styled.div`
@@ -122,12 +125,13 @@ export const CheckedPage = styled.div`
 `
 
 export const ProgressTextContainer = styled.div`
+  color: ${props => props.color};
   display: flex;
   flex-direction: row;
 `
 
 export const ProgressText = styled.span`
-  color: white;
+  color: ${props => props.color};
   margin-left: 17px;
   width: 180px;
   font-weight: bolder;
@@ -136,7 +140,7 @@ export const ProgressText = styled.span`
 `
 
 export const Lines = styled.line`
-background-color: #fff;
+background-color: ${props => props.color};
   width: 3px;
   height: 13px;
   border-radius: 7px;
