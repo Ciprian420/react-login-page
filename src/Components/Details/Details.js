@@ -1,5 +1,15 @@
 
-import { InputLonger, InputCont, SideBarContainer, Header, ContMain, DetailsCont ,H4, H3, H5, Para, Detailssecond, Link, Footer, Button, Simplediv, Input } from "./Details.style"
+import { InputLonger,
+        InputLongerx,
+        SideBarContainer,
+        Header, ContMain,
+        DetailsCont ,
+        H4, H3, H5,
+        Para,
+        Detailssecond,
+        Link, Footer, Button,
+        Simplediv, Input,
+        } from "./Details.style"
 import DetailSideBar from "../Details/DetailsSideBar"
 import { useForm } from "react-hook-form"
 import {useState, useEffect, useContext} from "react";
@@ -11,10 +21,11 @@ import SideBar from "../SideBar/SideBar";
 import { useLocation } from "react-router"
 import { useNavigate } from 'react-router-dom';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import React, { useRef } from 'react'
 
 
 
-const makeid = (length) => {
+const makeId = (length) => {
     let text = "";
     const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
@@ -26,6 +37,7 @@ const makeid = (length) => {
 }
 
 const Details = () => {
+const refName = useRef("");
     let navigate = useNavigate()
     const nextPage = () => {
         navigate("/page2")
@@ -36,22 +48,10 @@ const Details = () => {
     const [Number, SetNumber] = useState("")
     const [Country, SetCountry] = useState("")
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDFCyVx0svRELkympaEGa0IXW5r0PnCRTE",
-    authDomain: "login-ad768.firebaseapp.com",
-    projectId: "login-ad768",
-    storageBucket: "login-ad768.appspot.com",
-    messagingSenderId: "130602005190",
-    appId: "1:130602005190:web:e142f77ea3cd7c4bca9dc7",
-    measurementId: "G-1365Q36W6L"
-};
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app)
-const date = new Date().toString()
 const handleSubmit = async (e) => {
     nextPage()
     e.preventDefault();
-    const add = await setDoc(doc(db, "users", makeid(20)), {
+    const add = await setDoc(doc(db, "users", makeId(20)), {
         name: Name,
         email: Email,
         phone: Number,
@@ -60,7 +60,14 @@ const handleSubmit = async (e) => {
     });
 }
 
-
+let [myname, setMyname] = useState( )
+const arrf = function() {
+    const arr = ["name", "069048478"]
+    console.log(arr[0])
+    myname = arr[0]
+    const test = refName
+    test.textContent = myname
+}
     return (
         <ContMain>
             <SideBarContainer>
@@ -69,6 +76,7 @@ const handleSubmit = async (e) => {
             <DetailsCont>
                 <Detailssecond>
                     <Header>
+                        <H5 ref={refName} onClick={arrf}>{myname}fff</H5>
                         <H5>STEP 1 OF 3</H5>
                         <Para>Lost or Have Troubles?<Link> Get Help  → </Link></Para>
                     </Header>

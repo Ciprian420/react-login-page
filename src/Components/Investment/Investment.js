@@ -32,10 +32,11 @@ import InvestmentSideBar from "../Investment/InvestmentSideBar"
 import {ContMain} from "../Details/Details.style";
 import {BrowserRouter as Router, Route, Routes, useNavigate} from "react-router-dom";
 import React from "react";
+import { db } from "../../firebase";
 
 
 
-const makeid = () => {
+const makeId = () => {
     let text = "";
     let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
@@ -53,23 +54,12 @@ const Container2 = () => {
     }
     const [Min, SetMin] = useState("")
     const [Max, SetMax] = useState("")
-    const date = new Date().toString()
-    const firebaseConfig = {
-        apiKey: "AIzaSyDFCyVx0svRELkympaEGa0IXW5r0PnCRTE",
-        authDomain: "login-ad768.firebaseapp.com",
-        projectId: "login-ad768",
-        storageBucket: "login-ad768.appspot.com",
-        messagingSenderId: "130602005190",
-        appId: "1:130602005190:web:e142f77ea3cd7c4bca9dc7",
-        measurementId: "G-1365Q36W6L"
-    };
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app)
+    
 
     const handleSubmit = async (e) => {
         nextPage()
         e.preventDefault();
-        await setDoc(doc(db, "investmentInfo", makeid()), {
+        await setDoc(doc(db, "investmentInfo", makeId()), {
             min: Min,
             max: Max,
             createdAt: serverTimestamp()

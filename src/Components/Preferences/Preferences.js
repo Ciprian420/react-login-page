@@ -8,51 +8,16 @@ import {getFirestore} from "@firebase/firestore";
 import {doc, setDoc} from "firebase/firestore";
 import {clickHandlerFamily, clickHandlerHospitality, clickHandlerIndustrial, clickHandlerMultifamily,
      clickHandlerOffice, clickHandlerOther, clickHandlerRetail,clickHandlerWarehousing} from "./PrefrencesStyleFunction/PrefrencesStyleFunction";
-
-
-const makeid = (length) => {
-    let text = "";
-    const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for (let i = 0; i < length; i++) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-
-    return text;
-}
+     import { db } from "../../firebase";
 
 
 
 const Preferences = (props) => {
-
     let navigate = useNavigate();
     const nextPage = () => {
         navigate("/page4")
     }
-    const [Min, SetMin] = useState("")
-    const [Max, SetMax] = useState("")
-    const date = new Date().toString()
-    const firebaseConfig = {
-        apiKey: "AIzaSyDFCyVx0svRELkympaEGa0IXW5r0PnCRTE",
-        authDomain: "login-ad768.firebaseapp.com",
-        projectId: "login-ad768",
-        storageBucket: "login-ad768.appspot.com",
-        messagingSenderId: "130602005190",
-        appId: "1:130602005190:web:e142f77ea3cd7c4bca9dc7",
-        measurementId: "G-1365Q36W6L"
-    };
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app)
-
-    const handleSubmit = async (e) => {
-        nextPage()
-        e.preventDefault();
-        await setDoc(doc(db, "preferences", makeid()), {
-            preferences: "string"
-
-        });
-    }
-      
+  
     return (
         <ContMain>
             <SideBarContainer><PreferencesSideBar/></SideBarContainer>
@@ -112,7 +77,7 @@ const Preferences = (props) => {
                         <Para color="#3988dd" onClick={() => {navigate("/page2")}}>← Back to the previous</Para>
                         <CustomDiv>
                             <Button onClick={nextPage} color="#3988dd" backgroundColor="#edf7fd">Skip for now</Button>
-                            <Button onClick={handleSubmit} type="submit" color="white" backgroundColor="#35a1ee">Next step</Button>
+                            <Button onClick={nextPage} type="submit" color="white" backgroundColor="#35a1ee">Next step</Button>
                         </CustomDiv>
                     </Footer>
                 </Detailssecond>
